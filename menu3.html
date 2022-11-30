@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css"> 
+
+  </head>
+
+  <body>
+
+    <header>
+      <br><br><br><br><br><br>현우의 코딩놀이터
+   </header>
+
+      <nav>
+      
+        <ul>
+          <li class="a2">준</li><!--
+       --><li class="a2">비</li><!--
+       --><li class="a2">중</li><!--
+       --><li class="a2">★</li>
+        </ul>
+      </nav>
+    <aside>
+      
+      <div id="profileimg">
+        ssd
+
+      </div>
+      <div id="profiletext">
+        <p>안녕하세용<br>
+         김현우 입니다.<br>
+         자신에게 좀 더 나은 가치로 살아가기 위해 개발자로 살고자 합니다.<br><br>
+         사람을 좋아하구요. 말하는거 좋아합니다. 취미는 코노가기,영화보기,책보기 입니다. 특기로는 중국어와 요리입니다.<br></p>
+      
+      </div>
+
+    </aside>
+    
+    <div id="list">
+      <ul>
+        <li class="b1"><a href="menu1.html">md파일이란?</a></li>
+        <li class="b1"><a href="menu2.html">하이퍼바이저란?</a></li>
+        <li class="b1"><a href="menu3.html">virtual box와 vagrant</a></li>
+        <li class="b1"><a href="menu4.html">html란?</a></li>
+        <li class="b1"><a href="menu5.html">시멘틱테그란?</a></li>
+        
+      </ul>
+    </div>
+
+
+    
+    <section>
+      <div id="content3">
+         '그러면 VM과 VM내에 OS까지 있는데,왜 굳이 '하이퍼바이저' 라는 애를 쓰죠?'
+         <p>하드웨어를 가상화하면서 하드웨어와 각각의 VM을 모니터링하는 중간 관리자 역할을 하는 것이 하이퍼바이저(i.e Virtual Machine Monitor)입니다. <br><br>
+         그리고 저희가 사용할 vm프로그램은 virtual box입니다</p>
+         virtual box는 설명해서 알겠는데 vagrant는 누구세요?'
+         <p>쉽게 설명드리자면, 보통 예전에는 cd로 윈도우를 설치했었죠. 그리고 그 파일들은 .iso파일로 부릅니다.<br> <br>
+         그리고 우린 이걸 이미지라고 말을 해요 즉, iso파일이 이미지다 라고 생각하면 편합니다. <br><br>
+         그러면 우리가 가상화 서버를 만들고 나서 운영체제를 설치해야 하는데,<br><br>
+         그 서버전용 운영체체들(ubuntu,centos등) 을 모아 놓은 집합소가 vagrant 사이트에 있고,<br><br>
+         우린 vagrant 프로그램 파일과 원하는 서버를 사이트에서 다운받을 겁니다. 이말인 즉슨, <br>
+         한 프로그램으로 명령어를 쳐서 여러개의 OS를 각각의 VM에 다운 및 설치가 가능하다는 겁니다.</p>
+
+        <p><img src=https://user-images.githubusercontent.com/118426739/202864710-11346ed4-8f55-4560-a6b9-7ab3772f667a.png
+        alt="카카오 라이언" width="60%" height="auto">
+        <p>vagrand 사이트에서 윈도우를 다운로드 할 수 있는 화면(하이퍼바이저에 따라 골라서 다운받기 용이하게 되어있다.)<br><br>
+        TIP! 이건 분명 한 프로그램인데 좀 독특합니다. 위에서 가상화 설명으로 말씀드렸다시피,우린 용자의 PC에서 프로그램을 실행하고, <br><br>
+        여러개의 방을 만들 듯이 한대의 컴퓨터로 여러개의 가상의 하드웨어 자원들이 서로 격리된 환경을 만들어 줍니다. <br><br>
+        우린 마우스 클릭으로 바탕화면에서 프로그램을 실행 시킵니다. 이걸 GUI라고 부르고, <br><br>
+        또 프로그램을 실행시킬 때에는 하이퍼바이저와 VM에게 명령어로 명령을 합니다. 그리고 이걸 CLI (command-line interface)라고 부릅니다.</p>
+
+        <p><img src=https://user-images.githubusercontent.com/118426739/202864840-41f40428-9a05-4b9d-834f-935fd98fe36b.png
+        alt="카카오 라이언" width="60%" height="auto"></p><br>
+        <p>GUI화면</p><br>
+        <div id="popup3">
+        <p><img src=https://user-images.githubusercontent.com/118426739/202864913-81a24e1c-e286-4a4f-aba8-c0ffb1cee6cb.png
+        alt="카카오 라이언" width="60%" height="auto"></p><br>
+        <p>CLI화면</p><br>
+
+        vagrant init & vagrant file
+
+        <p>이 둘의 관계는 너무쉽다 vagrant init을 설정하면 vagrant file이 만들어진다.<br><br>
+          ▶ vagrant file은 vm에 대한 설정값을 뭉쳐놓은 파일이라고 생각하면 된다.vm의 설정정보,vm의 호스트명, 설치할 os정보, 네트워크 정보 등등<br><br>
+          ▶ vagrant init은 보통은 윈도우를 설치할때 이미 고정값으로 된 것을 vagrant init 운영체제 로 명령해도 되지만, <br><br>
+          자유의 설정을 원할시 것도 사이트에서 드레그해서 가져와서 수정후에 사용이 가능하다<br><br>
+          ▶ 사이트에 명시되어 있는 설정:<br>
+          Vagrant.configure("2") do |config| config.vm.box = "centos/7" end<br><br>
+
+          vagrant ssh<br><br>
+          쉽게 얘기하면 vagrant ssh는 현재의 vm 프로젝트가 생성하고 실행한 리눅스 서버에 접속하는 것이고, <br><br>
+          보안터미널 개념으로 이안에서 암호화해서 데이터를 주고 받는다.(vm내의 서버이름도 변경이 가능하다)<br><br>
+        </p>
+         
+
+
+
+      </div>
+      sss
+    </section>
+
+ 
+  </body>
