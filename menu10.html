@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css"> 
+
+  </head>
+
+  <body>
+
+    <header>
+    <br><br><br><br><br><br>현우의 코딩놀이터
+   </header>
+
+      <nav>
+      
+        <ul>
+          <li class="a2">준</li><!--
+       --><li class="a2">비</li><!--
+       --><li class="a2">중</li><!--
+       --><li class="a2">★</li>
+        </ul>
+      </nav>
+    <aside>
+      
+      <div id="profileimg">
+       
+
+      </div>
+      <div id="profiletext">
+        <p>안녕하세용<br>
+         김현우 입니다.<br>
+         자신에게 좀 더 나은 가치로 살아가기 위해 개발자로 살고자 합니다.<br><br>
+         사람을 좋아하구요. 말하는거 좋아합니다. 취미는 코노가기,영화보기,책보기 입니다. 특기로는 중국어와 요리입니다.<br></p>
+      
+      </div>
+
+    </aside>
+    
+    <div id="list">
+    <ul>
+      <li class="b1"><a href="menu1.html">md파일이란?</a></li>
+      <li class="b1"><a href="menu2.html">하이퍼바이저란?</a></li>
+      <li class="b1"><a href="menu3.html">virtual box와 vagrant</a></li>
+      <li class="b1"><a href="menu4.html">html란?</a></li>
+      <li class="b1"><a href="menu5.html">시멘틱테그란?</a></li>
+      
+    </ul>
+    </div>
+
+
+    
+    <section>
+    <div id="content">
+      <a class = "title">동기 HTTP 요청</a><br>
+      <p><img src=image/프론트엔드1.jpg width="60%" height="auto"></p>  
+      var ta = document.querySelector("#ta"); 은 기존텍스트에어리아를 받아오고, 한번의 설정으로 계속 받아올 수 있어서 함수 밖으로 뺌.<br><br>
+
+      var xhr = new XMLHttpRequest();매번 객체를 준비시켜서 함수 안에 쓴다.<br><br>
+      1) AJAX 객체 준비<br>
+      => 동기/비동기 HTTP 요청을 할 때 사용한다.<br>
+      =>전체 페이지를 갱신하지 않고 페이지의 일부만 갱신하는 용도로 쓴다.<br>
+      =>서버는 요청에 대한 응답으로 HTML 일부 코드나 XML, JSON 데이터를 전송한다.<br><br>
+
+      xhr.open("GET", "http://127.0.0.1:3000/exam01-1", false);<br><br>
+      2) 서버에 소켓 연결(동기 방식으로 요청)<br>
+      => 1번 파라미터: HTTP 요청 method. ex) GET, POST, HEAD ...<br>
+      => 2번 파라미터: 요청 URL<br>
+      => 3번 파라미터: 비동기 여부<br>
+
+      xhr.send();<br><br>
+      3) 서버에 HTTP(규칙에 따라) 요청을 보낸다.<br>
+      => 동기 방식으로 연결되었을 경우 서버에서 응답할 때까지 리턴하지 않는다.<br><br>
+
+      
+      ta.value = xhr.responseText;<br><br>
+      4) 서버가 응답한 콘텐트(payload = message-body)를 꺼낸다.<br><br>
+      
+      순서:<br>
+      var ta = document.querySelector("#ta");-> 버튼객체를 찾음->함수호출후 ->var xhr = new XMLHttpRequest()를 생성<br>
+      ->xhr.opne(어떤요청?.어디로?.동기/비동기);->xhr.send();서버에서 응답오기전까지 리턴하지 않는다.flase.<br>
+      ->ta.value =xhr.responseText;페이로드가 여기에 저장이 됨 (payload는 *바디태그에 있는 컨텐츠를 가리킨다.)<br><br><br>
+      <a class = "title">앞서 설정한 페이지와 연경해줄 서버를 만든다. 요청</a><br>
+      <p><img src=image/서버구축1.jpg width="60%" height="auto"></p>
+      <p><img src=image/서버구축2.jpg width="60%" height="auto"></p>
+     
+      먼저 node.js에서 express와 request라이브러리를 다운받는다.<br><br>
+
+      express 라이브러리 로딩하기<br>
+      const express = require('express');<br><br>
+
+      HTTP 요청을 다루는 라이브러리 로딩하기<br>
+      const request = require('request');<br><br>
+
+      const port = 3000; // 웹서버 포트 번호<br><br>
+
+      express()를 호출하여 웹서버를 준비한다.<br>
+      const app = express();<br><br>
+
+      // 웹서버 실행하기<br>
+      app.listen(<br>
+      3000,       // 포트 번호 지정<br>
+      () => {     // 서버가 시작되었을 때 호출될 함수 = 리스너 = 이벤트 핸들러<br>
+      console.log(`${port}번 포트에서 서버 시작했음!`);<br>
+        } <br>
+      );<br><br>
+      라이브러리들을 로딩하고 포트번호를 설정해준다.(앞의 html에 작성한 포트번호를 맞춰준다.각자 틀리게 작성하면 오류가뜬다.)서버 실행뒤. 웹서버 실행했을때 호출될 함수 설정<br><br>
+      <p><img src=image/쿼리스트링값.jpg width="60%" height="auto"></p>
+      쿼리스트링은 주소보다는 정보를 가리킨다.문자 그대로 보낼수 없어서 %% 등등으로 보낸다.<br>
+      url 한개를 1개의 컨텐트로 본다.(ex)  url.51561)<br>
+      브라우저쪽에서는 다른사이트를 크롤링 할 수 없어서 프록시서버를 경유해서 가져온다.<br>
+      프록시의 주요목적은 예를 들어 네이버에서 응답 받은걸 서버에게 주지 말고 나에게 보내라.res.send(body);<br><br>
+
+      <p><img src=image/백틱.jpg width="60%" height="auto"></p>
+      var payload = `이름: ${req.query.name}\n`;<br>
+      payload += `나이: ${req.query.age}\n`;<br>
+      req상자에 query상자 안에 age가 있는데 백틱을 사용해서 문자 열을 받아서 payload에 넣고 클라이언트에 보내준다.<br><br>
+
+      <a class = "title">post요청</a><br>
+      <p><img src=image/post요청.jpg width="60%" height="auto"></p>
+      xhr.open("POST", "http://127.0.0.1:3000/exam02-2", false);<br>
+      post요청은 쿼리를 통해 보내는게 아니라 메세지바디에 보낸다.<br>
+      POST 요청은 데이터를 send()를 호출할 때 넘긴다.<br><br>
+      서버에 POST 요청으로 데이터를 보낼 때는 반드시 Content-Type 헤더를 설정하여 <br>
+      어떤 타입의 데이터를 보내는지 서버에 알려줘야 한다.<br>
+      => 일반적인 form 데이터의 형식(이름=값&이름=값&...)은 다음과 같이 MIME 타입을 선언해야 한다.<br>
+      "application/x-www-form-urlencoded"<br><br>
+     
+      <a class = "title">post요청 서버</a><br>
+      <p><img src=image/post요청2서버.jpg width="60%" height="auto"></p>
+      app.post('/exam02-2', (req, res) => {<br>
+      app.post는 post요청이 들어오면 등록될 함수이다.<br>
+      서버에 데이터를 보낼때 어떤 컨텐트를 보낼질 알려준다.<br><br>
+
+      <a class = "title">직렬화,역직렬화</a><br>
+      <p><img src=image/직렬화역지렬화.jpg width="60%" height="auto"></p>
+        serialization(encoding):바이트 알갱이들을 객체를 문자로 바꾸는 것<br>
+        deserialization(decoding):문자나 객체를 바이트 알갱이들로 바꾸는 것<br><br>
+
+      <a class = "title">응답결과가json이나 xml인 이유</a><br>
+      <p><img src=image/응답결과가json이나xml인이유.jpg width="60%" height="auto"></p>
+      pc만 받으면 상관없는데, 아이폰이나 안드로이드 폰 같은 경우는 서로 다른 언어를 사용하기 때문에,<br>
+      화면구현에 어려움이 있어서 JSON파일을 받아서 화면에 구현한다.<br>
+
+      <a class = "title">동기방식의 문제점</a><br>
+      <p><img src=image/동기방식의문제.jpg width="60%" height="auto"></p>
+
+      동기 요청의 문제점<br>
+      => 서버에서 응답을 할 때까지 send() 메서드는 리턴하지 않는다.<br>
+      => 따라서 작업 시간이 오래 걸리는 경우 send() 메서드가 리턴하지 않아서  <br>
+          다른 작업을 수행하지 못하는 상황이 발생한다.<br>
+          서버에서 응답할 때 까지 send()는 리턴하지 않기 때문에 다음 라인을 실행할 수 없다. <br><br>
+
+      <a class = "title">비동기의 맹점</a><br>
+      <p><img src=image/비동기의맹점.jpg width="60%" height="auto"></p>
+      비동기 요청을 하려면 3번 파라미터를 true로 설정해야 한다.<br>
+      => 이것을 "비동기(asynchronous) 요청"이라 부른다.<br>
+      => 웹브라우저는 서버에 요청을 별도의 스레드에서 실행하게 하고, 서버 응답에 상관없이 즉시 다음 작업을 수행한다.<br>
+      => 서버에서 응답하는데 걸리는 시간(예: 10초)이 지난 후에 (넉넉하게 잡아서 13초 후에) responseText 변수의 값을 꺼낸다.<br><br>
+
+      <a class = "title">onreadystatechange 함수</a><br>
+      <p><img src=image/온레디스태이트체인지.jpg width="60%" height="auto"></p>
+      <p><img src=image/실습01.jpg width="60%" height="auto"></p>
+      onreadystatechange 함수를 사용하면 응답의 4단계 까지 로그가 나온다. 화면출력시간을 4번 이후의 시간대로 맞추면 된다.<br><br>
+
+      <a class = "title">onreadystatechange 함수의 맹점</a><br>
+      <p><img src=image/맹점.jpg width="60%" height="auto"></p>
+      응답결과에 상관없이 응답완료의 로그를 띄움으로 다시 이걸 맞는결과가 나올시에만 출력할 수 있도록 설정을 해준다.
+
+      <a class = "title">서버에서json데이터받기</a><br>
+      <p><img src=image/서버에서json데이터받기1.jpg width="60%" height="auto"></p>
+      <p><img src=image/서버에서json데이터받기2.jpg width="60%" height="auto"></p>
+      <p><img src=image/서버에서json데이터받기3.jpg width="60%" height="auto"></p>
+      1.<br>
+      array함수를 서버(app.js)파일에 작성하고 배열 객체를 JSON 문자열로 변환하여 클라이언트에게 보낸다.<br>
+      => serialization(직렬화)<br><br>
+      2.<br>
+      서버에서 받은 JSON 문자열을 자바스크립트 객체로 변환한다.<br>
+      => deserialization(역직렬화)<br>
+      배열을 반복하여 값을 꺼낸다.<br><br>
+      3.<br>
+      서버->클라에게 보낸 데이터를 직렬화로 보내고 역직렬화한 결과가 로그에 찍혀나온다<br><br>
+
+      <a class = "title">프록시서버</a><br>
+      <p><img src=image/프록시서버.jpg width="60%" height="auto"></p>
+      <p><img src=image/프록시서버1.jpg width="60%" height="auto"></p>
+      <p><img src=image/프록시서버2.jpg width="60%" height="auto"></p>
+       1. 서버 설정<br>
+       2.아래의 기본형식으로 함수를 서버의 내용으로 호출한다.<br><br>
+       document.querySelector("#btn1").onclick = () => {<br>
+        var xhr = new XMLHttpRequest();<br>
+        xhr.open(<br>
+            "GET", <br>
+             "http://127.0.0.1:3000/exam01-1", false);<br>
+        xhr.send();<br>
+        ta.value = xhr.responseText;<br>
+    };
+     
+    </div>
+    </section>
+
+ 
+  </body>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css"> 
+
+  </head>
+
+  <body>
+
+    <header>
+    <br><br><br><br><br><br>현우의 코딩놀이터
+   </header>
+
+      <nav>
+      
+        <ul>
+          <li class="a2">준</li><!--
+       --><li class="a2">비</li><!--
+       --><li class="a2">중</li><!--
+       --><li class="a2">★</li>
+        </ul>
+      </nav>
+    <aside>
+      
+      <div id="profileimg">
+       
+
+      </div>
+      <div id="profiletext">
+        <p>안녕하세용<br>
+         김현우 입니다.<br>
+         자신에게 좀 더 나은 가치로 살아가기 위해 개발자로 살고자 합니다.<br><br>
+         사람을 좋아하구요. 말하는거 좋아합니다. 취미는 코노가기,영화보기,책보기 입니다. 특기로는 중국어와 요리입니다.<br></p>
+      
+      </div>
+
+    </aside>
+    
+    <div id="list">
+    <ul>
+      <li class="b1"><a href="menu1.html">md파일이란?</a></li>
+      <li class="b1"><a href="menu2.html">하이퍼바이저란?</a></li>
+      <li class="b1"><a href="menu3.html">virtual box와 vagrant</a></li>
+      <li class="b1"><a href="menu4.html">html란?</a></li>
+      <li class="b1"><a href="menu5.html">시멘틱테그란?</a></li>
+      
+    </ul>
+    </div>
+
+
+    
+    <section>
+    <div id="content">
+      <a class = "title">promise 함수</a><br>
+      <p><img src=image/프로미스01.jpg width="100%" height="auto"></p>  
+      <p><img src=image/프로미스02.jpg width="100%" height="auto"></p>
+      
+      서버의 연결로는 동기와 비동기가 있다. <br>
+      동기는 응답을 받을때 까지 화면이 나오지 않아서 벽돌이된다.<br>
+      비동기는 응답을 받으면서 화면의 일부분을 수정하거나 다음작업을 계속하는것을 말한다.<br><br>
+      promise함수를 쓰는 가장 큰 이유는 비동기작업 여러개 일시 순서대로 작업하기 위해서 이다.<br>
+      promise객체를 생성하고 그안에 executor() 를 두고 서버의결과 값을 토대로 함수를 실행시킨다.<br>
+      정상적으로 이행(fulfill)했다고 통지 받으면, fulfill 상태일 때 호출하기로 약속한 함수를 실행한다.<br>
+      어떤 이유로 작업 수행을 거절(reject)했다는 통지를 받으면,reject 상태일 때 호출하기로 약속한 함수를 실행한다.<br><br>
+      해당 예시는 동기에 대한 작업임으로,작업이 완료된 후에 함수가 실행 됨으로 별도의 resole나 reject의 설정이 필요하지 않는다.<br><br>
+      
+      <p><img src=image/프로미스03.jpg width="100%" height="auto"></p>
+      서버에서 정상작동이 되면 hello를 호출하고, 그다음 함수가 동작된것을 출력한 결과이다.<br>
+      
+      <p><img src=image/프로미스04.jpg width="100%" height="auto"></p>
+      위에 내용을 따로 executor로 선언하지 않는 대신, promise함수안에 바로 파라미터 값으로 줄여서 사용한다.<br><br>
+      
+      <p><img src=image/프로미스05.jpg width="100%" height="auto"></p>
+      비동기 실행시에,resolve()를 사용했으나 작업 완료를 통보 받았을 때,<br>
+      호출될 함수를 등록을 하지 않으면 함수를 호출하지 않는다. 꼭 작성해야 한다.<br><br>
+      
+      <p><img src=image/프로미스07.jpg width="100%" height="auto"></p>
+      그림은 웹브라우저가 /hello라는 핸들러들 가져오는데, setTimeout 이라는 함수가 있어서,<br>
+      리턴은 하지만 컨텐츠가 없어서 응답이 완료된 상태는 아니고,<br>
+      비동기인 setTimeout 핸들러를 통해서 3초후에 콘텐츠를 node js로 return하는 내용이다.<br><br>
+
+      <p><img src=image/프로미스06.jpg width="100%" height="auto"></p>
+      먼저 함수가 실행이 끝나서 "끝!"을 출력한다.그리고 서버에 3초후에 출력이 된다고 설정했기때문에,<br>
+      다시 xhr.onreadystatechange = function() {} 함수로 들어와서 reject() 함수가 될시에 발동한다.<br> 
+      그리고promise.then(undefined, onRejected); 익스큐터 함수가 발동이 되고,<br>
+      *reject()를 할때 (undefined, ""); 꼭undefined를 설정해야지 값이 나오고 쓰지 않으면 오류가 난다<br>
+      실패시, 필수는 아니지만 실행이 되었는지 확인해보려고 function onRejected() {}; 을 실행시켜라<br><br>
+
+      <p><img src=image/프로미스08.jpg width="100%" height="auto"></p>
+      <p><img src=image/프로미스09.jpg width="100%" height="auto"></p>
+      <p><img src=image/프로미스10.jpg width="100%" height="auto"></p>
+      그냥 긴 함수를 줄인내용이다.<br><br>
+
+      <p><img src=image/프로미스11.jpg width="100%" height="auto"></p>
+      <p><img src=image/프로미스12.jpg width="100%" height="auto"></p>
+      먼저 log를 걸어서 순서대로 체인이 되었는지 확인이 가능하다.<br>
+      그리고 출럭 후 서로 연결된 값에 체인로그를 확인할 수가 있다.<br><br>
+
+      <p><img src=image/프로미스13.jpg width="100%" height="auto"></p>
+      <p><img src=image/프로미스14.jpg width="100%" height="auto"></p>
+      promise는 메서드체이닝이 promise의 값이 resolve나 reject가 따라 promise1라는 값이 나올것이고, <br>
+      거기서 또 resolve나 reject가 나오고 거기서 나온 값이 파생이 되는 상태에 계속적으로 함수를 등록해주는 것이다.<br><br>
+
+      <p><img src=image/프로미스15.jpg width="100%" height="auto"></p>
+      <p><img src=image/프로미스16.jpg width="100%" height="auto"></p>
+      위에 사진은 오류가 나온다 이유는 promise 함수는 return을 쓰지 않고, resolve("") 나 reject("")를 써야 한다.<br><br>
+
+      <p><img src=image/프로미스17.jpg width="100%" height="auto"></p>
+      만약에 return을 쓰고 싶으면 then()을 써서 resole()나 reject()의 값을 받아와서 출력할 수 있게 할 수 있다.<br><br>
+
+      <p><img src=image/프로미스18.jpg width="100%" height="auto"></p>
+      resolve()의 핸들러를 등록하지 않아도 된다.<br><br>
+
+      <p><img src=image/프로미스19.jpg width="100%" height="auto"></p>
+      catch() 는 then(undefined, onRejection) 과 동일하다.<br><br>
+
+      <p><img src=image/프로미스20.jpg width="100%" height="auto"></p>
+      catch()는 맨 아래쪽에 딱 한번만 사용한다.이유는 다음사진이다.<br><br>
+
+      <p><img src=image/프로미스21.jpg width="100%" height="auto"></p>
+      중간에 catch()를 쓰면 벌어지는 일이다.<br>
+
+      <p><img src=image/프로미스22.jpg width="100%" height="auto"></p>
+      resolve일때는 그나마 catch가 되는 값을 무시하고 계속 뒤로 가서 실행해서 괜찮다.<br>
+
+      <p><img src=image/프로미스23.jpg width="100%" height="auto"></p>
+      하지만, catch가 되는값은 충족이 되어서 catch 다음에 값이 fulfilled로 바뀌어서 그때부턴 resolve가 인식해서 값이 틀어져 버린다.<br><br>
+
+      <p><img src=image/프로미스25.jpg width="100%" height="auto"></p>
+      try/catch는 하나의 문법이다. executo에서 비동기 작업을 실행하는 중에 오류가 발생했을 때, 오류 핸들러가 호출되지 않는다.<br>
+      그래서 오류를 확인하고 싶을때 try/catch 사용을 한다.<br>
+      .catch((reason) => console.log("catched!" + reason)); 중에서 "catched!" + reason는 이유를 띄워준다<br><br>
+      <p><img src=image/프로미스26.jpg width="100%" height="auto"></p>
+      설명확인 가능.<br><br>
+
+      <p><img src=image/프로미스27.jpg width="100%" height="auto"></p>
+      <p><img src=image/프로미스28.jpg width="100%" height="auto"></p>
+      여기서는 resolve('{"title": "test..ok!", "content": "내용입니다!"}'); 한 값이 text기 때문에 text를 넘겨준다.<br>
+      받은 텍스트를 값으로 출력하고 싶어서, 값이 resolve일때 parse를 하기 위해서 다시 text를 넘겨준다.<br>
+      그리고 텍스트를 parse한 값이 then((obj) 로 넘어가서 출력된다<br><br>
+
+      <p><img src=image/프로미스29.jpg width="100%" height="auto"></p>
+      fetch()를 사용하는 이유:
+      1. 비동기 이면서, ajax 사용을 할때, 문장이 간결해짐
+      2. promise를 사용해야 할떄
+      -즉, 두가지를 동시에 사용할때 문법이 간결해진다.(굳이 ajax선언과, promise를 두번 할 필요가 없다.)
+      <p><img src=image/프로미스30.jpg width="100%" height="auto"></p>
+      var xhr = new XMLHttpRequest(); 기존 문법이다.
+
+      <p><img src=image/프로미스31.jpg width="100%" height="auto"></p>
+      fetch("http://localhost:3000/boards"); 서버에서 넘겨준게 text인게 확인이 되고,<br>
+      response.text();를 호출하기 위해서 받은 text를 promise2.then((text) => 에 넣고 parsing한다.<br>
+      그리고 그 파싱한 text를 return 한다.<br><br>
+
+      <p><img src=image/프로미스32.jpg width="100%" height="auto"></p>
+      바로 전사진이랑 완전히 같은 사진이고, json자체가 문자이기 때문에 text를 파싱해서 return 해준다.<br><br>
+
+      <p><img src=image/프로미스33.jpg width="100%" height="auto"></p>
+      어차피 then다음의 결과값으로 실행하기 때문에 길게 선언없이 .then, .then만 써준다.
+
+
+
+      
+     
+    </div>
+    </section>
+
+ 
+  </body>

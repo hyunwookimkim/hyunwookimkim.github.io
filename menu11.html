@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css"> 
+
+  </head>
+
+  <body>
+
+    <header>
+    <br><br><br><br><br><br>현우의 코딩놀이터
+   </header>
+
+      <nav>
+      
+        <ul>
+          <li class="a2">준</li><!--
+       --><li class="a2">비</li><!--
+       --><li class="a2">중</li><!--
+       --><li class="a2">★</li>
+        </ul>
+      </nav>
+    <aside>
+      
+      <div id="profileimg">
+       
+
+      </div>
+      <div id="profiletext">
+        <p>안녕하세용<br>
+         김현우 입니다.<br>
+         자신에게 좀 더 나은 가치로 살아가기 위해 개발자로 살고자 합니다.<br><br>
+         사람을 좋아하구요. 말하는거 좋아합니다. 취미는 코노가기,영화보기,책보기 입니다. 특기로는 중국어와 요리입니다.<br></p>
+      
+      </div>
+
+    </aside>
+    
+    <div id="list">
+    <ul>
+      <li class="b1"><a href="menu1.html">md파일이란?</a></li>
+      <li class="b1"><a href="menu2.html">하이퍼바이저란?</a></li>
+      <li class="b1"><a href="menu3.html">virtual box와 vagrant</a></li>
+      <li class="b1"><a href="menu4.html">html란?</a></li>
+      <li class="b1"><a href="menu5.html">시멘틱테그란?</a></li>
+      
+    </ul>
+    </div>
+
+
+    
+    <section>
+    <div id="content">
+      <a class = "title">jQuery</a><br>
+      <p><img src=image/제이쿼리01.jpg width="60%" height="auto"></p>  
+      $는 상자(껍데기를 씌우는 일)이고,  jquery를 $라는 변수에 놔둔다 라는 개념이다.
+      (selector)는 class나 id를 가리키고, css문법으로 #id 나 .class를 가리킨다.
+
+      <p><img src=image/제이쿼리02.jpg width="60%" height="auto"></p> 
+      사진대로 스크립트 태그를 꼭 써준다.<br>
+      $("tbody")[0] 뒤에 [0]을써준 이유는 처음사진에 querySelectorAll이 배열처럼 작용하기에 써준것이다.<br><br>
+
+      <a class = "title">vanila JS와 jQuery</a><br>
+      <p><img src=image/바닐라js와j쿼리.jpg width="60%" height="auto"></p>  
+     JavaScript에서 제공하는 빌트인 api(dom api, ajax api)가 있다. 이것을 app이 call한다.<br>
+     app이 직접 콜하면 바닐라js 이고 간접콜하면 코드가 간결하고 cross-browser 문제를 해결한다.<br>
+     =>브라우저간의 차이점을 없앤다.<br>
+     =>웹 브라우저에 따라 명령을 달리 수행함.<br><br>
+
+     <a class = "title">startsWith과 substring</a><br>
+     <p><img src=image/쿼리03.jpg width="60%" height="auto"></p> 
+     제리쿼리를 쓰는 가장 큰 이유중 하나는 문장의 간결함이다. 이것이 기존 문장이다.<br><br>
+     <p><img src=image/쿼리04.jpg width="60%" height="auto"></p> 
+     var tr = $("tr태그"); 를 먼저설정해주고, 제이쿼리 페이지에서 바꿔준다.<br><br>
+     <p><img src=image/쿼리05.jpg width="60%" height="auto"></p> 
+     startsWith의 기능은 특정문자를 빼서인식하라는 기능이고, 뺀건 안쓴다.<br>
+     substring(1, selector.length - 1) 에서 1은 기본적으로 맨 앞의 '<' 빼라는 뜻이고,<br>
+     selector.length -1 을 쓰는 이유는 맨 마지막 태그부문이 '>' 이기 때문에 값을 빼거나 사용할때 쓴다.<br>
+     태그는 엘리먼트를 뜻한다.<br><br>
+
+     <a class = "title">jQuery 리턴값</a><br>
+     <p><img src=image/쿼리06.jpg width="60%" height="auto"></p> 
+      j.query가 리턴하는 것은 element기 담고있는 객체를 기턴한다. 그리고 이객체에 return한다.<br>
+      해당 객체들에게 appen(), on(), click()등등 붙히고, 원래의 element에는아무것도 붙히지 않는다.<br><br>
+
+     <a class = "title">jQuery 리턴값</a><br>
+     <p><img src=image/쿼리07.jpg width="60%" height="auto"></p> 
+     <p><img src=image/쿼리08.jpg width="60%" height="auto"></p> 
+     위의 사진은 그위에 대한 보충설명이다.
+
+     <a class = "title">jQuery 리턴값</a><br>
+     <p><img src=image/쿼리09.jpg width="60%" height="auto"></p> 
+      let p =$(.dd)가 부모테그이고<br>
+      let p =$(p.test) 자식테그이다. <br>
+      $로 부모테그와 자식테그를 찾는다.<br>
+      p.append.(e) 중에 append는 함수이고, p와 (e)는 피연산자이다.<br>
+      부모테그가 3개의 div이고, test는 div가 두개인데<br>
+      *append함수는 자식테그를 복제해서 부모테그에 붙힌다. <br>
+      그리고 모든 자식태그를 제거한다.<br>
+      (원래대로 라면 appendchild를 쓴다면 for문을 계속돌려서 사용해야 하지만, <br>
+      dom api에서 제공하지 않는 append를 사용해서 한번에 간결하게 처리한다. )<br>
+      그리고 $를 붙히면 box를 리넡하고, $를 붙힌건 전부 append()가 포함되어 있다.<br><br>
+
+      <a class = "title">html() 와 on()</a><br>
+     <p><img src=image/쿼리10.jpg width="60%" height="auto"></p> 
+     jQeury는 html()를 주면 태그를 찾아서, content로 설정해서 사용한다.<br><br>
+     <p><img src=image/쿼리12.jpg width="60%" height="auto"></p> <br>
+     제이쿼리에서 html()와 on에 대한 설정을 해준다.
+     <p><img src=image/쿼리11.jpg width="60%" height="auto"></p>     
+     오리지널 함수에는 on이라는 함수는 없다. jquery에서 사용한다.<br>
+     첫번째 파라미터는 이벤트호출시, 두번째는 애로우함수를 만들고 함수한 코드를 작성한다.<br>
+     굳이 해석하자면, $(#btn1) 버튼을 찾아라, 메서드를 찾아서 이벤트가 실행될때, 두번째 파라미터인 함수를 실행시켜라 이다.<br><br>
+
+     <a class = "title">appendTo</a><br>
+     <p><img src=image/쿼리13.jpg width="60%" height="auto"></p> 
+     <p><img src=image/쿼리14.jpg width="60%" height="auto"></p> 
+     append는 자식입장에서 부모를 추가하는 것이고,<br>
+     appendTo는 부모객체에 자식을 append한다.<br><br>
+
+     <a class = "title">메서드체인닝</a><br>
+     <p><img src=image/쿼리15.jpg width="60%" height="auto"></p> 
+     그림처럼 e를 선언 및 할당을 하고 해당의 객체가 200번지라고 했을때,<br>
+     e.html("_"); 은 200번지가 리턴한 함수주소이다.<br>
+     200을 리턴하고, 앞쪽의 리턴값을 html이 수행을 하고, 또html의 리턴값을 두의 apppendTo가 수행한다.<br>
+     appendTo("_";) 역시 200번지가 리턴한 함수주소이다. <br><br>   
+     <p><img src=image/쿼리16.jpg width="60%" height="auto"></p> 
+     그래서 위의 사진처럼 번거롭지 않기 위해서 아래의 사진처럼 이어서 사용을 한다.<br>
+     <p><img src=image/쿼리17.jpg width="60%" height="auto"></p> 
+     자기가 받은 값을 이어서 받을때 사용한다.<br>
+     상자주소 리턴 그 this가 내장변수에 전달된다.<br>
+     굳이 해석을 하면, this값을 리턴했을때, tr을 만들고, innerhtml도 설정하고, 이 부모에 붙혀라 라는 뜻
+     tr와 뒤와 .html 뒤에 ;을 뺀다.<br><br>
+
+     <a class = "title">click()</a><br>
+     <p><img src=image/쿼리18.jpg width="60%" height="auto"></p> 
+     <p><img src=image/쿼리19.jpg width="60%" height="auto"></p> 
+     제이쿼리에서 굳이 on('click',함수)를 쓸필요 없이 바로 애로우함수를 호출할 수 있게 한다.<br>
+     el.click = function(handler)<br>
+     (콜백),(리스너)(핸들러),(fn) 다 같은말이다.<br><br>
+     <p><img src=image/쿼리20.jpg width="60%" height="auto"></p> 
+
+     <a class = "title">EelementBox</a><br>
+     <p><img src=image/쿼리21.jpg width="60%" height="auto"></p> 
+     <p><img src=image/쿼리22.jpg width="60%" height="auto"></p> 
+     jQeury의 주요목적 중 하나는 box로 관리하기 위함이고, EelementBox이라는 생성자에 두어서 프로토타입을 공통으로 사용하고자 위함이다.<br>
+     프로토타입을 공유하면 메모리 사용이 적어지고, function jQuery(selector) 안에서 프로퍼티로서 추가나 유지보수가 편해진다.<br><br>
+     
+     <a class = "title">ajax</a><br>
+     <p><img src=image/쿼리24.jpg width="60%" height="auto"></p> 
+     <p><img src=image/쿼리23.jpg width="60%" height="auto"></p> 
+     <p><img src=image/쿼리25.jpg width="60%" height="auto"></p> 
+     3장의 사진이 설명하는 것은 기존의 함수는 ajax가 기본적으로 가지고 있는 기능을 직접써서 보여준것이고,<br>
+     원래는 html에 있는 문서를 jQeury로 빼서 마지막사진처럼 담아놓고 쓰며, 2번째의 내용은 더욱 간결해졌다<br>
+     3번째 사진은에서 텍스트타입은 json을 파스해서 (deserialize) 자바스크립언어로 받는것이고 결과로 출력하거나<br>
+     아닐시에는 그냥 결과물을 출력해라이고, 결과가 없으면 에러를 띄워라 이다.<br><br>
+
+     <a class = "title">코드 줄이기</a><br>
+     <p><img src=image/쿼리26.jpg width="60%" height="auto"></p> 
+     <p><img src=image/쿼리27.jpg width="60%" height="auto"></p> 
+     error: () => {} 함수와,get과 date타입을 jquery 파일로 옮겨서 더욱 간결하게 했다.<br><br>
+
+     <a class = "title">코드 줄이기</a><br>
+     <p><img src=image/쿼리28.jpg width="60%" height="auto"></p> 
+     <p><img src=image/쿼리29.jpg width="60%" height="auto"></p> 
+      더욱 간결하게 .getJSON을 빼주었다 
+
+      <a class = "title">코드 줄이기</a><br>
+     <p><img src=image/쿼리30.jpg width="60%" height="auto"></p> 
+     foreach문을 사용해서 코드를 더욱 간결하게 해주었다.
+
+     <a class = "title">val()</a><br>
+     <p><img src=image/쿼리31.jpg width="60%" height="auto"></p> 
+     제이쿼리에서는 파라미터값이 비어있으면 값을 리턴하고,<br>
+     파라미터 값을 주면 설정한다.<br>
+     val();은 email,password 변수값을 리턴한다.<br>
+     val("");은 입력받은 값이 비어있는 변수값을 주게 입력이 되었음으로 비어있는 상태로 리턴한다.<br><br>
+
+     <a class = "title">submit()</a><br>
+     <p><img src=image/쿼리32.jpg width="60%" height="auto"></p> 
+     submit를 버튼을 눌렀을때, submit() 호출되고, 여기서 ajax를 요청,
+     여기서  e.preventDefault();가 제출되는 요청을 막고 그요청을 ajax로 보낸다.
+     <p><img src=image/쿼리33.jpg width="60%" height="auto"></p>      
+     <p><img src=image/쿼리34.jpg width="60%" height="auto"></p> 
+
+     <a class = "title">POST 요청</a><br>
+     <p><img src=image/쿼리35.jpg width="60%" height="auto"></p> 
+     <p><img src=image/쿼리36.jpg width="60%" height="auto"></p> 
+      $(파라미터1, 파라미터2, 파라미터3)<br>
+      파라미터1: url<br>
+      파라미터2: 객체<br>
+      파라미터3: 함수<br>
+      get요청은 메소드를 안적으면 get요청이지만,<br>
+      post요청은 메소드를 꼭 적어줘야한다.<br><br>
+
+      <a class = "title">메서드와 파라미터</a><br>
+     <p><img src=image/쿼리37.jpg width="60%" height="auto"></p>
+     메서드와 연산자의 공통점은 연산을 수행할 오퍼레이터와 작업에 사용해야 할 데이터를 필요로 한다.<br>
+     함수를 정의한다는 것은 연산자를 정의한다는 것.<br>
+
+     <a class = "title">메서드와 객체</a><br>
+     <p><img src=image/쿼리39.jpg width="60%" height="auto"></p>
+      200번지에 찾아가서 n이란 파라미터를 찾아가라<br>
+      new를 통해서 함수를 호출하는 경우는 obj에게 200번지를 넘긴다.<br>
+      this는 200번지를 가리키고 <br>
+      let obj = new greeting 일때<br>
+      greeting에서 hello를 찾지 못하면 상위 생성자의 프로퍼티에게서 찾는다.<br>
+  
+      <a class = "title">제이쿼리가 갖는 형식</a><br><br><br>
+      1. jquery.함수() 와 $.함수는 같은형식이고, 이 방식같은 경우는 jQeury함수에 대해 직접 호출하는것<br>
+      ex) jQuery.ajax(),jQuery.ajaxSetup() ,jQuery.getJSON() ,jQuery.post() ,jQuery.getJSON()<br><br>
+
+      2. .함수()는 리턴값을 호출하는 함수이다.<br>
+      ex).ajaxComplete(), .ajaxError() , .ajaxSend()<br><br>
+
+    
+      <a class = "title">한가지 함수로 파라미터를 읽는 법</a><br><br><br>
+      파라미터에 값을 주면 설정을하고,<br>
+      파라미터 값을 안주면 값을 리턴 받는다.<br>
+
+      ex)<br>
+      $( "div.example" ).css(color); <br>
+      $( "div.example" ).css(color, red); -->컬러를 레드로 설정해라<br>
+      $( "div.example" ).css(width, function(){}); -->width를 설정하는데, 함수를 리턴하는 width를 설정해라<br><br>
+
+
+
+      
+
+     
+
+
+
+
+      
+     
+    </div>
+    </section>
+
+ 
+  </body>

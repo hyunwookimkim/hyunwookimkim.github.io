@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css"> 
+
+  </head>
+
+  <body>
+
+    <header>
+    <br><br><br><br><br><br>현우의 코딩놀이터
+   </header>
+
+      <nav>
+      
+        <ul>
+          <li class="a2">준</li><!--
+       --><li class="a2">비</li><!--
+       --><li class="a2">중</li><!--
+       --><li class="a2">★</li>
+        </ul>
+      </nav>
+    <aside>
+      
+      <div id="profileimg">
+       
+
+      </div>
+      <div id="profiletext">
+        <p>안녕하세용<br>
+         김현우 입니다.<br>
+         자신에게 좀 더 나은 가치로 살아가기 위해 개발자로 살고자 합니다.<br><br>
+         사람을 좋아하구요. 말하는거 좋아합니다. 취미는 코노가기,영화보기,책보기 입니다. 특기로는 중국어와 요리입니다.<br></p>
+      
+      </div>
+
+    </aside>
+    
+    <div id="list">
+    <ul>
+      <li class="b1"><a href="menu1.html">md파일이란?</a></li>
+      <li class="b1"><a href="menu2.html">하이퍼바이저란?</a></li>
+      <li class="b1"><a href="menu3.html">virtual box와 vagrant</a></li>
+      <li class="b1"><a href="menu4.html">html란?</a></li>
+      <li class="b1"><a href="menu5.html">시멘틱테그란?</a></li>
+      
+    </ul>
+    </div>
+
+
+    
+    <section>
+    <div id="content">
+      <a class = "title">.java .class 컴파일</a><br>
+      <p><img src=image/java01.jpg width="100%" height="auto"></p> 
+      최소 단위는 class A{}이고, 소스파일의 블럭단위로 .class가 bin에서 생성이 된다.<br>
+      그리고 만약에 한개의 .java파일에 여러개의 class A{}, class B{}, class C{}를 두면,<br>
+      3개의 파일이 컴파일되어서 3개의 .class파일이 같은 폴더에 생성된다<br>
+      단점: 파일안에 어떤 class파일이 해당 파일인지 구분이 어렵고, 유지보수에 불편하다.<br>
+      보완사항: 유지보수가 쉽게 1개 class에 1개의 소스파일만 둔다.<br>
+      고객사와 파일공유시엔 class파일만 공유한다.<br>
+      명령어:C:\Users\chef_\git\bitcamp-ncp\myapp>javac A.java<br><br>
+
+      
+      <p><img src=image/java02.jpg width="100%" height="auto"></p> 
+      파일을 .java파일과 .class파일이 섞이지 않게, .class파일은 컴파일후 bin폴더에 분리해준다.<br>
+      단점:하지만 그래도 파일이 수백개면 한번에 알아보기 쉽지 않다. <br><br>
+
+      
+      <p><img src=image/java03.jpg width="100%" height="auto"></p>
+      <p><img src=image/java04.jpg width="100%" height="auto"></p>  
+      package문법을 사용해서,폴더위치를 package 이름과 동일하게 만들어준다.유지보수가 쉽다.<br><br>
+      파일내부나 파일명에 상관없이 패키지문법을 사용하면 bin폴더 내에서 우선시적용으로<br>
+      저장위치가 package이름과 동일하게 저장이 된다.<br>
+      명령어:C:\Users\chef_\git\bitcamp-ncp\myapp>javac -d bin src/*.java src/p1/*.java src/p2/*.java src/p2/px/*.java
+      bin폴더명은 여러개 숫자를 붙혀서 사용이 가능하다<br><br>
+
+      <a class = "title">클래스 이름과 소스 파일 이름 I</a><br>
+      <p><img src=image/java05.jpg width="100%" height="auto"></p>          
+      공개 클래스의 경우 *소스 파일명이 *클래스 이름과 같아야 한다. 다르면 컴파일 오류가 발생한다.<br>
+      비공개 클래스의 경우 클래스명과 소스 파일명이 일치하지 않아도 된다.<br>
+      굳이 public 설정이 아니라면, 비공개라고 생각을 하면 된다.<br>
+      즉, 해당사항은 A.java로 저장해야 하지만, 나머지는 파일명과 일치 않아도 된다.<br>
+      public class A {}<br>
+      class D {}<br>
+      class B {}<br>
+      class C {}<br><br>
+
+      <a class = "title">다른 패키지 클래스에 접근1</a><br>
+      <p><img src=image/java06.jpg width="100%" height="auto"></p> 
+      A.java라는 소스파일을 컴파일 하려고 할때,<br><br>
+
+      class A{<br>
+        p1.B.obj;<br>
+      }<br><br>
+
+      **여기서 제일 중요한점은 -classpath가 끌어오는것은 이미 컴파일된 .class파일이다.<br>
+      여기서 p1은 패키지에 소속된 클래스를 사용때 반드시 패키지를 지정해야만 컴파일러가 찾을수 있다.<br><br>
+
+      컴파일 명령어를 쳐준다.<br><br>
+
+      $javac -classpath bin/main p1.B.java<br>
+      $javac -cp bin/main p1.B.java <br><br>
+
+      p1은 main옆에 써주는게 아니라 B라는 하위의 클래스 앞에 써주어야 한다. <br>
+      여기서 bin/main은 패키지 및 .class 파일이 들어있는 폴더이다.JVM과 컴파일러를 찾을 옵션의 경로르 따라간다.<br><br>
+
+      <a class = "title">다른 패키지 클래스에 접근2</a><br>
+      <p><img src=image/java07.jpg width="100%" height="auto"></p> 
+      
+      만약 컴파일 하지 않은 소스파일을 그대로 쓰려면 끌어쓰려는 소스파일의 경로를 써주면 된다.<br>
+      중요한점은** 끌어쓰려는 그 소스파일도 같이 컴파일이 된다.<br>
+      명령어:<br>
+      javac -d bin/main -sourcepath src/main/java scr/main/java/A.java<br><br>
+
+      <a class = "title">다른 패키지 클래스에 접근3</a><br>
+      <p><img src=image/java08.jpg width="100%" height="auto"></p> 
+      import문법에서 상위폴더와 하위 폴더의 문서명이 같을시에는 둘중 하나에 패키지명을 써서 명확하게 구분을 해주어야 한다.
+     
+      ex) 같은 C가 있을경우<br><br>
+
+      import p1.B<br>
+      import p2.C<br>
+      import p2.px.C<br>
+      import p2.px.aaaaa.bbbbb.ccccc.ddddd.D<br><br>
+
+      class A{<br>
+        B obj;<br>
+        p2.C obj2;<br>
+        C obj3;<br>
+        D obj4;<br>
+      }<br><br>
+
+      <a class = "title">소스파일 인코딩</a><br>
+      <p><img src=image/java10.jpg width="100%" height="auto"></p> 
+      만약에 인코딩을 UTF-8로 설정하지 않으면, 컴파일시 윈도우os에 따라서 ms949로 컴파일해서 글자 깨짐현상이 있다.<br>
+      mac os나 linux unix는 괜찮다.<br><br>
+      
+      $javac -d bin/main -encoding UTF-8 src/-/A.java<br><br>
+
+      <a class = "title">main()</a><br>
+      <p><img src=image/java09.jpg width="100%" height="auto"></p> 
+      $java는 jvm 을 뜻한다.<br>
+      A는 main()이라는 entry point를 호출한다. .class는 적지 않는다.<br>
+      public static void main (String[] args) {} 에서 args의 변수명은 달라도 된다.<br>
+      이형식은 지키되, function prototye이면서 메서드 형식이라서 A가 호출한다.<br><br>
+
+      <a class = "title">literal</a><br>
+      <p><img src=image/java11.jpg width="100%" height="auto"></p> 
+      <p><img src=image/java12.jpg width="100%" height="auto"></p> 
+
+      4바이트 정수<br><br>
+
+      접미사를 붙이지 않고 그냥 숫자를 표현하면 4바이트 크기의 메모리에 저장되는 정수를 표현한다.<br>
+      System.out.println(2147483647); 4바이트 양의 정수 최대값<br>
+      System.out.println(-2147483648); 4바이트 음의 정수 최소값<br>
+      4바이트 메모리 크기를 초과하면 컴파일 오류가 발생한다.<br><br>
+
+      8바이트 정수<br><br>
+
+      숫자 뒤에 L 또는 l을 붙인다.<br>
+      보통 대문자를 붙인다.<br><br>
+
+      주의!<br>
+      다음은 크기가 다른 정수이다.<br>
+      System.out.println(100); 4바이트 크기의 정수 값<br>
+      System.out.println(100L); 8바이트 크기의 정수 값<br><br>
+
+      System.out.println(Integer.MAX_VALUE);  4바이트로 표현할 수 있는 정수 최대값<br>
+      System.out.println(Integer.MIN_VALUE);  4바이트로 표현할 수 있는 정수 최소값<br>
+      System.out.println(Long.MAX_VALUE);  8바이트로 표현할 수 있는 정수 최대값<br>
+      System.out.println(Long.MIN_VALUE);  8바이트로 표현할 수 있는 정수 최소값<br><br>
+
+      <p><img src=image/java13.jpg width="100%" height="auto"></p> 
+      부호-크기/절대값(Sign-Magnitude): 부동 소수점에서 가수부(significand or mantissa)를 저장할 때 사용한다.<br>
+      맨 왼쪽 1비트를 부호 비트로 사용한다. 양수는 0, 음수는 1 이다. <br>
+      나머지 비트는 절대값(magnitude)으로 저장한다.<br>
+      8비트 = 1비트(부호) + 7비트(절대값)<br>
+      예) +24 => |+24| = 24 ---> 0001 1000<br>
+      예) -24 => |-24| = 24 ---> 1001 1000<br><br>
+      - 수의 범위(8비트 기준): -128 ~ +127 (그냥 사용하면 값이 정확하지 않아서 2의보수를 추가해서 사용한다.)
+      0111 1111 (127)<br>
+      1000 0000 (-128)<br><br>
+
+      K-초과(Excess-K):- K를 바이어스 값이라 부르며, 표현하려는 값에 더할 때 사용한다.표현하려는 값 + 초과 값(K) = 결과<br>
+      바이어스 값(K)을 구하는 공식:<br>
+      K = 2^(비트수 - 1)<br>
+      예) 8비트일 경우 ---> K = 2^(8 - 1) = 2^7 = 128, 결과 = 128 + 값<br><br>
+
+      - IEEE 부동소수점 표준에서는 다음의 공식을 사용한다.<br>
+      K = 2^(비트수 - 1) - 1<br>
+      예) 8비트일 경우 ---> K = 2^7 - 1 = 127, 결과 = 127 + 값<br><br>
+
+      사진속예제 풀기 및 생각하기<br><br>
+      +12.375에서 +는 0, 12는 정수라서 이진법으로 바꾸면 1100<br>
+      375는 실수인데 이진법으로 으로 바꾸면 .011이가 나온다<br>
+      부호를 빼고 두개 합치면1100.011<br>
+      여기서 가수부 추출과 지수부 추출을 위해 1.100011*2^3 으로 바꿔준다.<br>
+      맨 앞 소수점 앞의 정수는 떼서 버리고, 100011는 가수부(sign-magnitude).<br>
+      Excess-k = 2^(8-1) =128-1 127<br>
+      3제곱은 떼서 bias값(Excess-k)과 더해준다. 127+3 =130<br>
+      나온 130은 이진법으로 계산해서 지수부로 만든다.<br>
+      만든숫자들을 부호 지수부 가수부 순으로 해서 32진수로 만들어 준다.<br>
+      01000001010001100000000000000000 이걸 4byte로 쪼개서 16진수로 만들어 준다<br>
+      0x41460000 나온 16진수를 음수로 바꿔준다. <br><br>
+      
+      <a class = "title">변수선언</a><br>
+      <p><img src=image/java15.jpg width="100%" height="auto"></p> 
+
+      값의 표현--> 값다루기-->실행흐름제어(분기문/반복문 포함)-->명령문묶기(함수)<br>
+     -->메서드묶기(class)-->코드재사용-->코드유지보수를 쉽게<br>
+      *class는 새데이터 타입을 정의하는 문법<br>
+      *코드재사용:상속,다형성,캡슐화<br>
+      *쉬운유지보수: 추상화, 인터페이스, 중첩클래스<br>
+      *빌트인 객체<br><br>
+
+      <p><img src=image/java14.jpg width="100%" height="auto"></p> 
+      정수, 부동소수점, 논리, 문자, 문자열 그 밖에는 class 데이터 타입 이라고 부르고 레퍼런스라고 부름.<br>
+      int = a; 라고 했을때 a는 저장소 위치를 가리킨다(메모리의 이름)<br>
+      = 은 assignment operation(할당연산자) 라고 부른다.<br>
+      => 즉, 4byte 담을 메모리 준비해! <br><br>
+
+      <p><img src=image/java16.jpg width="100%" height="auto"></p> 
+      자바는 ;을 무조건 붙힌다.<br>
+      a = 100; 라고 했을때 100은 4byte에 2진수값으로 들어간다.<br>
+      -예외상황:<br><br>
+
+      short C = 100;<br>
+      byte D = 100;<br><br>
+
+      byte 와 short는 각각 1바이트 2바이트지만, 리터럴 값이 메모리 보다 크더라도 4바이트인 리터럴 객체 100을 담을수 있다.<br><br>
+
+      <p><img src=image/java17.jpg width="100%" height="auto"></p> 
+      l-value 는 메모리여야 한다.<br>
+      r-value 는 리터럴,변수 식(expression)이다.<br>
+      변수를 사용하려면 먼저 사용해야 하고, hoisting이라는 개념이 아예 없다.<br>
+      같은 블록안에서는 변수 중복사용이 불가능하다.<br>
+      값이 저장되지 않은 변수는 사용하지 못한다.<br><br>
+
+      <p><img src=image/java18.jpg width="100%" height="auto"></p> 
+      <p><img src=image/java19.jpg width="100%" height="auto"></p> 
+      char c; 에서 c는 문자코드 utf-16을 저장하는 2바이트 메모리이다.<br>
+      문자는 음수가 없기때문에 정수를 저장하고, 숫자는 문자코드를 의미한다.<br>
+      2바이트만을 저장하기에 char은 0~65535의 값만을 취급한다.<br><br>
+
+      short s;에서 s는 숫자를 저장하고, 음수의 표현까지 가능하다.<br>
+      -32768 ~ +32767 까지 저장이 가능하다.<br><br>
+      
+      char c = 65; <br>
+      System.out.println(c) 시에,<br>
+      폰트--> A문자--> A문자 그림으로 출력<br><br>
+
+      <p><img src=image/java20.jpg width="100%" height="auto"></p> 
+      
+      C = 65; 문자를 c에 저장 'A' (10진수로 표현)<br>
+      C2 = 0x41; 문자를 C2에 저장 'A' (16진수로 표현)<br><br>
+
+      char C2 = 'A';<br>
+      =>변수에 저랑이 되는거 2진수어다 즉, 'A'는 연산자가 65로 변환하고<br>
+      이걸 2진수로 바꿔서 char이라는 변수에 저장을 한다.<br><br>
+
+      char C2 = '똥'; 은 16진수 유니코드로 0xB625이고, 십진수인 46629로 바뀌고, <br>
+      2진수어로 변환되서 저장이 된다. <br><br>
+
+      <a class = "title">배열문법</a><br>
+      <p><img src=image/java21.jpg width="100%" height="auto"></p> 
+      배열을 생성하는 방식은 2가지가 있고 아래의 방식을 권장함.<br><br>
+
+      데이터타입[] 변수명; (권장함)<br>
+      여기서 변수명은 주소를 담는변수라고 하고 다른말로 referance 변수라고 한다.<br><br>
+
+      변수명 = new 데이터타입[수량]; 인데 여기서 [수량]은 배열을 만들 개수를 말한다.<br><br>
+
+      <p><img src=image/java22.jpg width="100%" height="auto"></p> 
+
+      배열의 가장 큰 특징은 배열은 연속적인 메모리이다.<br>
+      기존의 변수들의 선언을 모아놓은 것은 개별적이며 방대한 데이터를 다루기 어렵다.<br>
+      int[] a; 에서 a는 레퍼런스 주소이다.<br>
+      a의 바이트 크기는 명세서에도 나와있지 않아서 모른다.<br><br>
+      
+      int[] a;<br>
+      a = new int[4];<br><br>
+
+      new로 명령으로 배열을 선언하면 int타입의 메모리가 준비된다. 그것을 instance 라고 부른다. int 배열의 인스턴스<br>
+      리턴값은 준비한 메모리의 리턴값이다.<br><br>
+      
+      <p><img src=image/java23.jpg width="100%" height="auto"></p> 
+      <p><img src=image/java24.jpg width="100%" height="auto"></p> 
+
+      RAM은 운영체제가 연속된 메모리를 관리한다. 그리고 운영체제가 APP이사용할 메모리를 제공한다.<br>
+      다 사용하면 메모리를 회수한다.<br>
+      운영체제는 APP이 사용한 메모리를 초기화 시키지 않고 해당영역을 잠금해제 시킨다.<br><br>
+
+      *메모리는 연속된 바이트들의 1차원 배열이고, 이해를 돕기위해 2차원 사각형으로 그리거나 표현한다.<br>
+
+      new 명령을 통해 준비 메모리만을 instance라고 부른다.<br>
+      JVM 을 사용하면 OS가 메모리를 사용한다고 승인함. <br>
+      배열을 만들때 NEW 명령어로 준비한 변수는 HEAP에 놓여진다.<br>
+      
+      <p><img src=image/java25.jpg width="100%" height="auto"></p> 
+      int[] arr = new int[4];<br>
+      라고 한다면 배열은 0~3 까지 인덱스를 만든다.<br>
+      그리고 만약에 <br>
+      arr[4] = 500;라고 명령을 하면<br>
+      배열에 5번째인 int[5]는 존재 하지 않기에,<br>
+      실행오류라는 런타임오류를 띄운다.<br><br> 
+
+      <p><img src=image/java26.jpg width="100%" height="auto"></p> 
+      int[] arr = new int[4]; 이고,<br>
+      레퍼런스의 주소를 초기화 시킬때는<br>
+      arr= null; 이라고 명령한다. 절대 arr = 0;이라고 하지 않는다.<br>
+      그럼 배열안에 모든 값이 0이 된다.<br>
+      그리고 초기화된 arr 또한 콘솔창에 오류로 나오지 않으며,<br>
+      arr 였던것으로 인지 하는게 맞는거 같다.<br><br>
+
+      <p><img src=image/java27.jpg width="100%" height="auto"></p>
+      garbage라는 개념도 이해하기 쉬운게, 일반 변수도 두번 선언하면 뒤에 선언한 것을 읽어오듯이,
+      배열도 나중에 선언된걸 가져오는데, 이전의 인스턴스 주소를 잃어버려서 더이상 사용할수 없는 인스턴스를 가비지라고 한다.
+      자동으로 가비지 콜렉터에 저장이 되며, 메모리부족이나 cpu가 한가하면 자동으로 처리한다.
+
+      ex) 
+      int[] arr = new int[4]; 예를 들어 기존에 200이던 주소가
+      arr = new int[3];       새로이 2700 주소로 변경이 되었고
+      arr[0] = 70;            2700 주소 의 0번째 배열은 70이다. 즉, 주소를 잃어버린 인스턴스는 200 주소
+
+      <p><img src=image/java28.jpg width="100%" height="auto"></p>
+      예제)<br><br>
+
+      int[] arr1 = new int[3]; <br><br>
+
+      int[] arr2;<br><br>
+
+      arr2 = arr1;<br><br>
+
+      int[] arr3 = new int[2];<br>
+
+      arr1 = new int[4];<br>
+
+      arr2 =arr3<br><br>
+
+      과정:<br><br>
+
+      arr1이 200번지이고 arr2는 arr1이랑 같다 => 200번지 주소/ 참조 2<br>
+      arr3는300번지이다 => 200번지 주소/ 참조 2 300번지 주소/ 참조 1<br>
+      arr1 이 400번지로 갱신이 됨=> 200번지 주소/ 참조 2-1, 300번지 주소/ 참조 1 400번지 주소/ 참조 1<br>
+      arr2 는 300번지로 갱신됨 => 200번지 주소/ 참조 2-2, 300번지 주소/ 참조 1+1 400번지 주소/ 참조 1<br>
+      => 200번지 주소/ garbage, 300번지 주소/ 참조 1+1, 400번지 주소/ 참조 1<br><br>
+
+      <p><img src=image/java29.jpg width="100%" height="auto"></p>
+      함수는 크게 두가지 종류이다.<br>
+      상자.도구(값);<br>
+      값.작업수행자(값);<br><br>
+      
+      system.out.println(no)<br>
+      도구함.변수.작업자.파라미터<br>
+      (system이라는 도구함에서 콘솔정보를 꺼내서 파라미터의 콘솔정보를 띄운다)<br>
+      *out은 콘솔정보를 가지고 있다.<br>
+
+      <p><img src=image/java30.jpg width="100%" height="auto"></p>
+      <p><img src=image/java31.jpg width="100%" height="auto"></p>
+
+
+      system.out.println<br><br>
+
+      print와 동일하게 형식(int, float, double 등)에 구애받지 않는 문자를 그대로 출력하고 싶을 때 사용한다.<br>
+      차이점은 엔터 입력시 버퍼(buffer)에  \n(개행문자)가 같이 들어간다. (엔터 누르는 순간 엔터도 입력된걸로 간주)<br><br>
+      
+      system.out.printf<br><br>
+
+      print 와 println과 달리  <br>
+      형식을 신경써야할 때 사용(int, long, float, double 등)<br>
+      엔터 입력시 버퍼(buffer)에 \n(개행문자)는 포함 안됨.<br><br>
+
+      1) %d: 정수<br>
+      2) %f: 실수<br>
+      3) %c: 문자   <br>
+      4) %s: 문자열 <br>
+      파라미터2가 파라미터1인 에게 값을 삽입한다.<br>
+      즉, no가 %d에 변수 값을 삽입해서 정수값을 얻어낸다.<br>
+     
+    </div>
+    </section>
+
+ 
+  </body>

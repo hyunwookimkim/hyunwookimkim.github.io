@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css"> 
+
+  </head>
+
+  <body>
+
+    <header>
+    <br><br><br><br><br><br>현우의 코딩놀이터
+   </header>
+
+      <nav>
+      
+        <ul>
+          <li class="a2">준</li><!--
+       --><li class="a2">비</li><!--
+       --><li class="a2">중</li><!--
+       --><li class="a2">★</li>
+        </ul>
+      </nav>
+    <aside>
+      
+      <div id="profileimg">
+       
+
+      </div>
+      <div id="profiletext">
+        <p>안녕하세용<br>
+         김현우 입니다.<br>
+         자신에게 좀 더 나은 가치로 살아가기 위해 개발자로 살고자 합니다.<br><br>
+         사람을 좋아하구요. 말하는거 좋아합니다. 취미는 코노가기,영화보기,책보기 입니다. 특기로는 중국어와 요리입니다.<br></p>
+      
+      </div>
+
+    </aside>
+    
+    <div id="list">
+    <ul>
+      <li class="b1"><a href="menu1.html">md파일이란?</a></li>
+      <li class="b1"><a href="menu2.html">하이퍼바이저란?</a></li>
+      <li class="b1"><a href="menu3.html">virtual box와 vagrant</a></li>
+      <li class="b1"><a href="menu4.html">html란?</a></li>
+      <li class="b1"><a href="menu5.html">시멘틱테그란?</a></li>
+      
+    </ul>
+    </div>
+
+
+    
+    <section>
+    <div id="content">
+      <a class = "title">웹페이지와 어플리케이션</a><br>
+      <p><img src=image/웹페이지와어플리케이션.jpg width="60%" height="auto"></p>
+      그림에서의 내용은 웹페이지와 어플리케이션의 관한 내용이며, 관계는 아래와 같다.<br>
+      http client 와 http server간에 여러차례 요청과 응답을 한다. <br>
+      이과정에서 html문서와 각종 이미지파일,css,js파일 등등 오고가면서 렌더링을 통해 1개의 화면를 완성한다.<br>
+      이때 랜더링을 통한 각화면은 application이다. 추가적인 '새로고침' or 'url변경' 이 있으면,<br>
+      위의 과정의 처럼 새로 html을 불러와 위와 같은 작업을 한다.<br>
+      즉, 처음에 랜더링을 한 화면과 두번째 '새로고침' or 'url변경' 으로 랜더링 한 화면은 서로 다른 application이며, <br>
+      각자의 application내의 파일들간 메모리를 공유하지만, 서로 다른application 간 보안상의 이유로  메모리공유는 절대 불가능하다.<br><br>
+
+      <a class = "title"> AJAX(Asynchronous JavaScript And XML)</a><br>
+      <p><img src=image/ajax-00.jpg width="60%" height="auto"></p>
+      1~3번의 표시는 첫 화면을 의미하는 것이며, 4~6번은 app실행을 유지하면서 서버에 자원을요청 하는 것이다.<br>
+      원칙적으로 자바스크립트는 동일출처정책으로(same origin policy) 다른 도메인의 서버에 요청하는 것을 보안 문제로 간주하고 이를 차단하였다.<br>
+      해결방법으로 나온것이 "cros(cros-origin resource sharing)" 이고 html을 받을 원래서버에서 벗어나 자원들을(html,css,js,image...)받아 내는것.<br>
+      정확히는 서버와 클라이언트가 정해진 헤더를 통해 서로 요청이나 응답에 반응할지 결정하는 방식으로,<br>
+      요청을 받은 웹서버가 허용할 경우 다른 도메인의 웹페이지 스크립트에서도 자원을 받을 수 있게 해준다.<br>
+      방법은, 응답레터에 'Access-Control-Allow-Origin' 항목을 추가한다.<br><br>
+
+      <a class = "title"> AJAX(Asynchronous JavaScript And XML)</a><br>
+      <p><img src=image/AJAXAPI1.jpg width="60%" height="auto"></p>
+      <p><img src=image/AJAXAPI2.jpg width="60%" height="auto"></p>
+      Synchronous Vs Asynchronous(동기 vs 비동기)<br>
+      Synchronous & Asynchronous은 결과물을 돌려받는 시점에 초점을 두면 좀 더 쉽게 이해를 할 수 있다.<br>
+      Synchronous (동기)에서는 System Call이 끝날때까지 기다리고 결과물을 가져온다.<br>
+      Asynchronous (비동기)에서는 System Call이 완료되지 않아도 나중에 완료가 되면 그때 결과물을 가져온다.<br>
+      가장 큰 차이점은 결과물을 가저오는 시점이 다르다.<br><br>
+      XMLHttpRequest()<br><br>
+      => 동기/비동기 HTTP 요청을 할 때 사용한다.<br>
+      => 전체 페이지를 갱신하지 않고 페이지의 일부만 갱신하는 용도로 쓴다.<br>
+      => 서버는 요청에 대한 응답으로 HTML 일부 코드나 XML, JSON 데이터를 전송한다.<br>
+      => 이런 기법을 AJAX(Asynchronous JavaScript And XML)이라 부른다.<br><br>
+
+      <a class = "title"> AJAX구동시스템</a><br>      
+      <p><img src=image/AJAX구동시스템.jpg width="60%" height="auto"></p>
+      <p><img src=image/AJAX구동시스템2.jpg width="60%" height="auto"></p>
+      첫번째 사진은 5500포트의 서버와의 실행을 유지하면서 3000번포트의다른 서버에 HTML자원을 요청해서 다시 원래 서버로 출력해서 넘겨준다.<br>
+      방법은 node.js을 다운받고,실행할 app폴더에가서 라이브러리 중 express를 app.js에 붙혀준다.<br>
+      $npm install express --save<br>
+      npm: node package manager<br>
+      express : 라이브러리 명<br>
+      --save: *"package.json" (npm init)를 설정파일에 라이브러리 정보를 추가한다.<br><br><br>
+
+      <a class = "title"> node.js 와 어플리케이션</a><br>      
+      <p><img src=image/노드js어플.jpg width="60%" height="auto"></p>
+      node_modules는 install명령시 자동으로 생성된다.<br>
+      이때 주의할점은 git.repo에 백업하지말고, 반드시 .gitignore 파일에 등록해야 한다.<br>
+      공유하면 다운받은사람의 라이브러리가 내 라이브러리 상태로 다운그레이드 될수있다.<br>  
+      아래는 실행 내용이고, entry point: (app.js)는 진입점,프로그램의 시작화면을 의미한다.<br><br>
+
+     
+
+      <a class = "title">npm install 과 npm install 라이브러리 </a><br>      
+      <p><img src=image/npminstall1.jpg width="60%" height="auto"></p>
+      <p><img src=image/npminstall2.jpg width="60%" height="auto"></p>
+      npm install시에 뒤에 라이브러리 명을 써줄시에 해당 라이브러리의 조건및 버전 검사후 적절버전 다운, 모듈 폴더 없으면 모듈 다운.<br>
+      npm install시에 뒤에 라이브러리 명이 없을시,package.json파일에 등록된 모든 라이브러리 다운 혹은 없는 라이브러리만 골라서 다운.<br><br>
+
+      <a class = "title">npm 사용시 실행 프로세스 </a><br>      
+      <p><img src=image/npm프로세스.jpg width="60%" height="auto"></p>
+      npm init은 package.json파일을 생성시킨다.<br><br>
+
+      C:\ex07>npm init<br>
+      This utility will walk you through creating a package.json file.<br>
+      It only covers the most common items, and tries to guess sensible defaults.<br><br>
+
+      See `npm help init` for definitive documentation on these fields<br>
+      and exactly what they do.<br><br>
+
+      Use `npm install pkg` afterwards to install a package and<br>
+      save it as a dependency in the package.json file.<br><br>
+
+      Press ^C at any time to quit.<br>
+      package name: (ex07)<br>
+      version: (1.0.0)<br>
+      description:<br>
+      entry point: (app.js)<br>
+      test command:<br>
+      git repository:<br>
+      keywords:<br>
+      author:<br>
+      license: (ISC)<br>
+      About to write to C:\Users\chef_\git\bitcamp-ncp\javascript\ex07\package.json:<br><br>
+
+      {<br>
+        "name": "ex07",<br>
+        "version": "1.0.0",<br>
+        "description": "",<br>
+        "main": "app.js",<br>
+        "scripts": {<br>
+          "test": "echo \"Error: no test specified\" && exit 1"<br>
+        },<br>
+        "author": "",<br>
+        "license": "ISC"<br>
+      }<br><br><br>
+
+
+      Is this OK? (yes)<br><br><br>
+
+      마지막에 dir을 프롬프트창에서 눌러서 package.json이 설치 되었는지 확인해본다.<br><br>
+      2022-12-15  오후 04:23               198 package.json<br><br><br>
+
+      <a class = "title">기존 서버 5500포트에서 다른 서버인 3000번포트로 변경해서 실행하기 </a><br>      
+      <p><img src=image/ajax-01.jpg width="60%" height="auto"></p>
+      <p><img src=image/AJAXAPI2.jpg width="60%" height="auto"></p>
+      <p><img src=image/express라이브러리.jpg width="60%" height="auto"></p>
+      순서: ex01-1 html에서 설정<br>
+      document.querySelector("#btn1").onclick = () => {<br><br>
+      var xhr = new XMLHttpRequest(); <br>
+      =>1)객체준비<br><br>
+      xhr.open("GET", "http://localhost:3000/exam01-1", false);<br>
+      =>2)xhr.open(HTTP 요청 ,요청URL, 비동기 여부)<br><br>
+      xhr.send();<br>
+      =>3)서버에 HTTP(HTTP 규칙에 따라)요청을 보낸다.<br><br>
+      ta.value = xhr.responseText;<br>
+      =>4)서버가 응답한 콘텐트를 꺼낸다.<br><br>
+      };<br><br>
+
+      순서: app.js에서 설정<br><br>
+      1)express 라이브러리 로딩<br><br>
+      2)위에 html에서 get요청한 3000포트로 변경 const port = 3000;//웹서버 포트 번호<br><br>
+      3)const app = express(); 로 라이브러리 호출<br><br>
+      4)get요청이 들어왔을때 호출될 메서드 지정<br><br>
+      app.get(    <br>                     
+      '/exam01-1', <br>                 
+      =>요청 url(exam01-1을 3000으로 보내기로 앞에서 html에 설정했기에 바꿔준다)<br>
+      (req, res) => {<br>               
+      =>(요청정보 function,응답과 관련된 정보)<br>
+      =>요청정보 function은 이미 받은상태이고 아직 실행은 하지 않은상태.요청 핸들러: 요청이 들어왔을때 호출 되는 메서드<br>
+      res.set('Access-Control-Allow-Origin','*');<br>
+      res.set('Content-Type', 'text/plain; charset=UTF-8')<br>
+      res.send('hello!');<br>
+      }<br>
+      ); <br><br>
+      5)웹서버 실행하기  <br>  
+      app.listen(<br>
+      3000,                     //포트 번호 지정(네트웍프로그램을 구분하는번호)<br>
+      () => {                   // 서버를 시작되었을때 호출될 햄수 =리스너 = 이벤트 핸들러<br>
+      console.log(`${port}번 포트에서 서버 시작했음!`); //백틱사용<br>
+      }<br> 
+      );<br>
+
+
+
+
+    </div>
+    </section>
+
+ 
+  </body>

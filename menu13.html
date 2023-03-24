@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css"> 
+
+  </head>
+
+  <body>
+
+    <header>
+    <br><br><br><br><br><br>현우의 코딩놀이터
+   </header>
+
+      <nav>
+      
+        <ul>
+          <li class="a2">준</li><!--
+       --><li class="a2">비</li><!--
+       --><li class="a2">중</li><!--
+       --><li class="a2">★</li>
+        </ul>
+      </nav>
+    <aside>
+      
+      <div id="profileimg">
+       
+
+      </div>
+      <div id="profiletext">
+        <p>안녕하세용<br>
+         김현우 입니다.<br>
+         자신에게 좀 더 나은 가치로 살아가기 위해 개발자로 살고자 합니다.<br><br>
+         사람을 좋아하구요. 말하는거 좋아합니다. 취미는 코노가기,영화보기,책보기 입니다. 특기로는 중국어와 요리입니다.<br></p>
+      
+      </div>
+
+    </aside>
+    
+    <div id="list">
+    <ul>
+      <li class="b1"><a href="menu1.html">md파일이란?</a></li>
+      <li class="b1"><a href="menu2.html">하이퍼바이저란?</a></li>
+      <li class="b1"><a href="menu3.html">virtual box와 vagrant</a></li>
+      <li class="b1"><a href="menu4.html">html란?</a></li>
+      <li class="b1"><a href="menu5.html">시멘틱테그란?</a></li>
+      
+    </ul>
+    </div>
+
+
+    
+    <section>
+    <div id="content">
+      <a class = "title">spring boot</a><br>
+      <p><img src=image/sb01.jpg width="100%" height="auto"></p>  
+      spring boot안에는 tomcat server와 springframwork가 내장되어 있다.<br>
+      정적자원:실행하지 않고 그대로 읽음.tomcat server만 써도 동작이 가능(node.js가 이 방식임)<br>
+      springframwork을 쓰는 이유는 읽어서 리턴하는게 아니라 실행해야 할때 사용함.<br><br>
+      
+      <p><img src=image/sb02.jpg width="100%" height="auto"></p>
+      자바를 실행할때는 그냥 실행이 불가능하고 .java를 컴파일 해서 바이트 코드인 .class로 변환해서 사용한다.<br>
+      컴파일 할때 쓰는 여러 도구들은 jdk(java development kit)라고 한다.<br>
+      java로 만들어진것 들과 개발도구는 JVM(JAVA VIRTUAL MACHINE)이라는 인터프리터에서 실행한다.<br><br>
+
+      <p><img src=image/sb03.jpg width="100%" height="auto"></p>
+      <p><img src=image/sb04.jpg width="100%" height="auto"></p>
+      자바는 하이브리드 방식이다.<br>
+      하이브리드 방식을 도입한 이유:<br>
+      1. os마다 빠로 컴파일을 할 이유가 없다.(동일한 바이트 코드를 생성)<br>
+      2.os에 상관없이 인용 jvm이 설치 되어 있다면 실행할 수 있다.(운영체제에 종속되지 않음)<br>
+      3.컴파일 과정에서 문법의 오류를 모두 찾아낸다.(실행할때마다 문법오류 검사를 해서 순수 인터프리터 보다 빠르다.)<br>
+      4.완전기계어는 아니지만, 기계어와 가까운 언어로 변환된 명령을 실행하기 때문에 저장된 명령을 실행하는것 보다 빠르다.<br><br>
+
+      <p><img src=image/sb05.jpg width="100%" height="auto"></p>
+      LLVM 이전: 중복개발이 불편하고, 컴파일러 제작자가 여려언어와 여러기계를 다뤄야 하는 문제 생긴다.<br>
+      같은 언어라도 OS가 다르면 각각 compile을 했다.<br>
+      같은 os라도 언어가 다르면 각각 compile을 했다.<br><br>
+      
+      LLVM 이후: 새 프로그래밍 언어와 컴파일을 만들기 쉬워짐.<br>
+      IR(중간언어)로 방식을 바꿔버렸다. 컴파일러 제작자는 한가지의 기계어(가상기계어)만 다루면 되는 장점이 있다.<br><br>
+
+      <p><img src=image/sb06.jpg width="100%" height="auto"></p>
+      => 3단계로 쪼개면서 한번에 개발하는 것에 대한 부담이 줄었다.<br>
+      기존에 만들어 놓은 컴파일러를 재사용 할 수 있다.<br><br>
+
+      <p><img src=image/sb07.jpg width="100%" height="auto"></p>
+      .kt .groovy .scala (코틀린, 그루비, 스칼라)는 자바의 호환언어로서 바이트코드로 컴파일 변환이 가능하고 JVM에서 실행이 가능하다.<br><br>
+
+      <p><img src=image/sb08.jpg width="100%" height="auto"></p>
+      .class를 실행시키기 위해서 JVM을 사용해야 하며 제일 대표적인 JVM은 JAVA.EXE이다.<br>
+      .class를 사용하기 위해서는 java libray를 사용한다. 그리고 jvm은 실행시키기 위해서 같은 java libray를 필요로 한다.<br>
+      그리고 JVM+java libray 를 JRE(자바를 실행시키기 위한 환경) 이라고 부른다.<br>
+      또 그 JRE+컴파일나 디버거등의 개발도구를 필요로 하는데 그걸 JDK라고 한다.<br><br>
+
+      <p><img src=image/sb09.jpg width="100%" height="auto"></p>
+      JAVA EE는 기업용 application에 필요한 도구이다.(기술 명세서)<br>
+      JAVA SE는 자바 어플리케이션 제작의 필수도구이다<br>
+      (-JAVA EE를 다운받는다고 해서 JAVA SE가 다운 받아지지는 않는다.)<br>
+      (-JAVA SE중에 server&JRE가 있는데, 기존 JRE에서 UI를 제거한 것이고, *서버전용도구 이다.)
+      JAVA ME는 임베디드 애플리케이션 제작에 필요한 도구이다.(H/W에 삽입되는 APP)<br><br>
+
+      <p><img src=image/sb10.jpg width="100%" height="auto"></p>
+      자바프로그래밍 준비순서:<br>
+      1.jdk설치 (java.oracle.com)<br><br>
+
+      2.환경변수 설정<br>
+      -JAVE_HOME -> JDK 설치폴더 (jdk가 설치된 폴더경로, java.app이 jdk를 찾을때 이환경 변수를 이용한다.)<br>
+      -PATH -> JDK/bin 폴더경로 추가(실행프로그램이 있는 폴더경로, cli창에서 프로그램 이름으로 바로 실행하고 싶을때)<br><br>
+
+      -방법:<br>
+      $setx JAVA_HOME JDK설치 폴더/M<br>
+      $setx PATH "JDK/bin;%PATH% <br><br>
+
+      3.빌드도구 설치 및 설정(gradle.org)<br>
+      -프로잭트 폴더를 준비<br>
+      -아카이브 파일을 생성(.jar, .zip, .ear ... 등등)<br><br>
+
+      4.eclipse ide 설치 (eclipse..org) *intellij도 쓸수 있지만 유료임<br>
+      -eclipse ide 개발플랫폼 +plug in(편집기추가, jdt, cdt) => 개벌도구확장<br>
+      -소스편집<br>
+      -개발전반의 작업을 수행할 수 있도록 도와주는 프로그램.<br>
+      -jdk를 이용한 빌드작업<br><br>
+
+      <p><img src=image/sb11.jpg width="100%" height="auto"></p>
+      gradle을 cli로 초기화하기 위한 scoop을 install<br>
+
+      <p><img src=image/sb12.jpg width="100%" height="auto"></p>
+      <p><img src=image/sb13.jpg width="100%" height="auto"></p>
+      gradle init 으로 초기화<br>
+      *DSL: DOMIN-SPECIFIC-LANGUAGE<br>
+      패키지명 이름짓기: 회사도메인.프로젝트명(BOOTAPP) => kr.co.bitcamp.bootapp<br><br>
+      
+      <p><img src=image/sb14.jpg width="100%" height="auto"></p>
+      tree구조 및 파일 이름설명<br>
+
+      <p><img src=image/sb15.jpg width="100%" height="auto"></p>
+      <p><img src=image/sb16.jpg width="100%" height="auto"></p>
+      start.spring.io에서 3개의 라이브러리를 추가한뒤,explore을 눌러준다.<br><br>
+      <p><img src=image/sb19.jpg width="100%" height="auto"></p>
+      해당 명령어들을 아래사진(build.gradle 파일)에 붙혀준다(gradle init 으로 초기화 한뒤 붙혀준다.)<br><br>
+      <p><img src=image/sb17.jpg width="100%" height="auto"></p>
+      <p><img src=image/sb18.jpg width="100%" height="auto"></p>
+      라이브러들을 붙혀준뒤, gradle -q run 명령을 실행한다.<br>
+      8080포트에서 hello, world가 나오는지 확인한다.<br><br>
+
+      <p><img src=image/sb20.jpg width="100%" height="auto"></p>
+
+
+      
+     
+    </div>
+    </section>
+
+ 
+  </body>

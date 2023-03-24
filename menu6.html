@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css"> 
+
+  </head>
+
+  <body>
+
+    <header>
+    <br><br><br><br><br><br>현우의 코딩놀이터
+   </header>
+
+      <nav>
+      
+        <ul>
+          <li class="a2">준</li><!--
+       --><li class="a2">비</li><!--
+       --><li class="a2">중</li><!--
+       --><li class="a2">★</li>
+        </ul>
+      </nav>
+    <aside>
+      
+      <div id="profileimg">
+       
+
+      </div>
+      <div id="profiletext">
+        <p>안녕하세용<br>
+         김현우 입니다.<br>
+         자신에게 좀 더 나은 가치로 살아가기 위해 개발자로 살고자 합니다.<br><br>
+         사람을 좋아하구요. 말하는거 좋아합니다. 취미는 코노가기,영화보기,책보기 입니다. 특기로는 중국어와 요리입니다.<br></p>
+      
+      </div>
+
+    </aside>
+    
+    <div id="list">
+    <ul>
+      <li class="b1"><a href="menu1.html">md파일이란?</a></li>
+      <li class="b1"><a href="menu2.html">하이퍼바이저란?</a></li>
+      <li class="b1"><a href="menu3.html">virtual box와 vagrant</a></li>
+      <li class="b1"><a href="menu4.html">html란?</a></li>
+      <li class="b1"><a href="menu5.html">시멘틱테그란?</a></li>
+      
+    </ul>
+    </div>
+
+
+    
+    <section>
+    <div id="content">
+      <a class = "title">객체생성</a><br>
+      <p><img src=image/객체생성.jpg width="60%" height="auto"></p>
+      object.create(null)은 아무것도 없는 빈객체를 생성한다<br><br>
+      object.create(object.prototype)은 빈 객체를 생성하고 prototype으로 지정된 생성자를 통해 기본프로퍼티를 추가한다<br>
+      *prototype은 객체원형틀을 기반으로 프로퍼티를 추가하는 방법을 말한다.<br>
+      object.create 중 create는 new object() 추가를 의미한다.<br><br>
+
+      <a class = "title">생성자</a><br>
+      <p><img src=image/생성자.jpg width="60%" height="auto"></p>
+      *new object()의 뜻을 풀이하자면 new는 완전히 비어있는 객체 생성을 의미하며, object는 property를 빈객체에 준비(삽입)한다.<br><br>
+
+      <a class = "title">hasOwnProperty</a><br>
+      <p><img src=image/hasownproperty.jpg width="60%" height="auto"></a></p>
+      예를 들어 그림처럼 아래의 obj.title="_"; 등의 프로퍼티가 console.log()로 검사했을때 개발자 당신이 만듯것인지 아닌지에 따라서 맞는지 틀린지에 따라서 true/flase로 나온다.<br><br>
+      console.log(obj.toString());<br>
+      어떤 생성자를 통해서 만들어진건지 보여줌<br>
+      console.log(obj.valueOf());<br>
+      객체 그대로를 출력함<br>
+      console.log(obj.hasOwnProperty());<br>
+      개발자가 추가한 프로퍼티인지 검사함.<br><br>
+
+      <a class = "title">객체가 다른 객체를 포함하는 경우</a><br>
+      <p><img src=image/객체가객체를포함.jpg width="60%" height="auto"></a></p>
+      let obj = new object(); 일떄,<br>
+      let obj2 = new object();라는 연관없는 함수하나를 선언한다.<br>
+      근데 만약에 obj.other = obj2; 라면,<br>
+      여기서other라는 property는 obj의 주소값으로 속해있다는 말이다.<br>
+      console.log(obj.other.v2);<br><br>
+
+      <a class = "title">객체와 this</a><br>
+      <p><img src=image/객체와this.jpg width="60%" height="auto"></a></p>
+      toString은 객체생성시 기본적으로 생기는 문자열 프로퍼티이다.<br>
+      this. 는 함수가 소속된 객체를 가리킨다.그래서 sum () => this.kor 이라고 했을때 윈도우 객체에서 찾을수 없어서 undefined가 나온다<br>
+          
+      같은 객체에 소속된 멤버(변수나 함수, 객체)를 사용하려면 참조변수 this를 반드시 붙여야 한다.<br>
+      <p><img src=image/애로우함수this.jpg width="60%" height="auto"></a></p><br>
+      애로우 함수에서 this. 는 window객체를 가리킨다.<br>
+
+      <a class = "title">object literal = 객체리터럴문법 = 객체를 코드로 표현하는 방법</a><br>
+      <p><img src=image/객체리터럴.jpg width="60%" height="auto"></a></p>
+      {} = new.object; 이고, 객체를 표현 할때 사용한다. <br><br>
+
+      <a class = "title">new 사용법(객체 - 객체 생성과 초기화 I)</a><br>
+      <p><img src=image/new사용법.jpg width="60%" height="auto"></a></p>
+
+      new가 빈객체를 생성한다.<br>
+      object()가 자동으로 호출되어서 상단에 기본으로 자리잡는다.<br>
+      createScore(생성된 객체를 준비시키는 일을 하는 함수"생성자")를 실행시킨다.<br><br>
+
+      낱개의 레퍼런스 변수 선언<br>
+      *객체주소를 담는것을 레퍼런스라고 한다.<br>
+      ex) var s1 = new Object();<br>
+      자바스크립트는 객체를 생성할 때 기본 객체를 준비한 후, 기본 객체에 프로퍼티를 추가하는 방식으로 객체를 초기화시킨다.<br><br>
+
+      <a class = "title">new 사용법(객체 - 객체 생성과 초기화 II)</a><br>
+      <p><img src=image/배열로객체.jpg width="60%" height="auto"></a></p>
+      <p><img src=image/생성자와프로퍼티.jpg width="60%" height="auto"></a></p>
+      두가지 방법으로 배열을 만들수 있다.<br>
+      var scores = [];<br>
+      new Array();<br>
+      생성자 score가 new로 새로운 3개의 함수주소(200,300,400) 객체들을 만들고, 각각의 프로퍼티들을 쉽고 다루고자 배열처럼 숫자를 메겼다.<br>
+      그리고 그림에서 sum이나 ever처럼 공통으로 사용하는 함수들을 score.property에 담고 공동으로 사용하며 생성자의 객체를 보관한다.(property 역시 변수를 담을 수 있다.)<br>
+      만약에 stirng.prototype을 찾는데 해당 배열에서 찾지 못하면, string.prototype에 가서 찾는다.<br><br>
+
+      <a class = "title">팩토리매서드</a><br>
+      <p><img src=image/팩토리메서드.jpg width="60%" height="auto"></a></p>
+      함수를 통해서 객체를 생성하는 기법을 *팩토리 매서드패턴 이라고 한다.<br><br>
+      1) 객체생성이 복잡할 경우<br>
+      2) 직접 객체를 생성하고 초기화시키기 보다 편리함<br>
+      3) 함수를 통해 객체를 생성하고 초기화 시키는 기법<br>
+      4) 코드를 더 간결하게 한다.<br><br>
+
+
+      <a class = "title">생성자와 일반함수</a><br>
+      <p><img src=image/생성자와일반함수.jpg width="60%" height="auto"></a></p>
+      new명령없이  호출하면 일반함수로 취급한다.<br>
+      var obj2 = f1();<br>
+      new를 명령하면서 호출하면 생성자를 취급한다.<br>
+      var obj1 = new f1();<br><br>
+
+      <a class = "title">{}문법</a><br>
+      <p><img src=image/중괄호문법.jpg width="60%" height="auto"></a></p>
+      {} 표기법을 이용하여 객체 생성과 초기화를 수행한다. {} 안의 내용은 프로퍼티이다.<br><br>
+      
+      <a class = "title">생성자와 오브젝트</a><br>
+      <p><img src=image/생성자와오브젝트.jpg width="60%" height="auto"></a></p>
+      엄밀히 말하자면 new는 빈객체를 생성하고, 임의의 함수f1()객체를 생성할때 obj라는 객체가 자동 생성이 된다. <br>
+      여기서 자동으로 기본생성된 obj는 super생성자이고, f1()는 sub생성자이다.<br>
+      obj와 f1()은 각각 프로퍼티를 생성한다.<br>
+      ex) obj.toString이라고 한다면 먼저 객체에서 찾고 없으면, f1.property에서 가서 찾고, 또 없으면 super.property생성자에서 찾는다.<br><br>
+
+      <a class = "title">super-sub를 체인으로 엮는이유</a><br>
+      <p><img src=image/super-sub체인이유.jpg width="60%" height="auto"></a></p>
+      개념은 어렵지 않다. 한 부품으로 여러가지 물품을 생산하듯, 한개의 생산자를 재사용한다. 그리고 기능확장이 가능하다.
+      동일한 이유로 부품을 바꾸면 여러가지를 단계별로 뜯어가면서 바꿔야 하듯이 거꾸로 올라가면서 바꾼다.
+      <p><img src=image/생성자호출예.jpg width="60%" height="auto"></a></p>
+      <p><img src=image/슈퍼생성자의프로퍼티사용.jpg width="60%" height="auto"></a></p>
+      let el = new Engine; 일때,<br>
+      el.toString();은 object.prototype의 toString()을 호출한다.<br>
+      el.print();는 Engine.prototype의 print()를 호출한다.<br>
+      하지만 만약, el.test(); 라면 object.prototype.test();<br>
+      왜?<br>
+      1) 현재객체에서 test()를 찾는다.<br>
+      2) 없으면 생성자의 prototype에서 찾는다.<br>
+      3) 또 없으면 상위 생성자의 prototype에서 찾는다.<br><br>
+
+      <p><img src=image/슈퍼생성자의프로퍼티사용2.jpg width="60%" height="auto"></a></p>
+      해당 그림에서는 cl.print를 가져오려고 하는 그냥 가져올수 없다는걸 보여준다.<br>
+      Car();는 object.prototype과는 연결이 되어 있지만, Engine하고는 연결이 되어 있지않다.<br><br>
+      
+      <p><img src=image/슈퍼생성자의프로퍼티사용3.jpg width="60%" height="auto"></a></p>
+      이제는 연결하는 법이다.<br>
+      object.setprototypeOf(하위생성자 프로토타입, 상위생성자 프로토타입);<br>
+      object.setprototypeOf(Car.prototype, Engine.prototype);<br>
+      이 명령어를 사용하면 Car.prototype과 Engine.prototype이 연결이 가능하다<br><br>
+
+      <a class = "title">함수프로퍼티와 prototype프로퍼티</a><br>
+      <p><img src=image/함수프로퍼티와프로토타입프로퍼티.jpg width="60%" height="auto"></p>
+      함수프로퍼티: 특정 객체에 대해 작업하지 않고 함수를 묶을 때는 함수에 바로 저장한다.<br>
+      객체명(변경되지 않음).함수명()<br>
+      프로토타입프로퍼티: 특정객체의 값을 사용해서 작업을 수행하는 함수를 묶을때는 생성자의 prototype에 저장한다.<br>
+      객체명(대상객체에 따라 바뀜).함수명()<br>
+      아래 사진에 부연설명이 있다.<br><br>
+
+      <a class = "title">함수프로퍼티와 prototype프로퍼티2</a><br>
+      <p><img src=image/함수소속.jpg width="60%" height="auto"></p>
+      *객체에 직접소속:<br> <br> 
+      함수 목적에 따라서 그룹의로서의 역할을 한다.<br>
+      new 하고 함수를 할 필요가 없다.<br>
+      바로 호출하는 함수는 대문자를 사용한다.<br>
+      ex) Math.random(); JSON.parse();<br><br>
+      *생성자의 prototype에 소속<br><br> 
+      객체를 먼저 생성해야 한다.<br>
+      var obj = new 생성자();<br>
+      obj(obj가 함수가 사용할 데이터로의 역할을 함).함수()<br>
+      즉, 그냥 생성이 불가능하고, 객체를 만들고 호출하는 전형적인 특징.<br>
+      ex)const newArr = arr.flat([dept])<br>
+      메소드:객체가 들어있는 함수는 메소드라고 부른다. <br><br>
+
+      <a class = "title">생성자와 인스턴스</a><br>
+      <p><img src=image/생성자와인스턴스.jpg width="60%" height="auto"></p>
+      score->new score()->object, score<br>
+      생성자를 통해 초기화(생성된)된 함수(객체)를 호출할 수 있다.<br>
+      ex) HTMLElement.accesskey<br>
+
+
+    </div>
+    </section>
+
+ 
+  </body>

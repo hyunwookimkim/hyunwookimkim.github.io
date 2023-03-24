@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css"> 
+
+  </head>
+
+  <body>
+
+    <header>
+    <br><br><br><br><br><br>현우의 코딩놀이터
+   </header>
+
+      <nav>
+      
+        <ul>
+          <li class="a2">준</li><!--
+       --><li class="a2">비</li><!--
+       --><li class="a2">중</li><!--
+       --><li class="a2">★</li>
+        </ul>
+      </nav>
+    <aside>
+      
+      <div id="profileimg">
+       
+
+      </div>
+      <div id="profiletext">
+        <p>안녕하세용<br>
+         김현우 입니다.<br>
+         자신에게 좀 더 나은 가치로 살아가기 위해 개발자로 살고자 합니다.<br><br>
+         사람을 좋아하구요. 말하는거 좋아합니다. 취미는 코노가기,영화보기,책보기 입니다. 특기로는 중국어와 요리입니다.<br></p>
+      
+      </div>
+
+    </aside>
+    
+    <div id="list">
+    <ul>
+      <li class="b1"><a href="menu1.html">md파일이란?</a></li>
+      <li class="b1"><a href="menu2.html">하이퍼바이저란?</a></li>
+      <li class="b1"><a href="menu3.html">virtual box와 vagrant</a></li>
+      <li class="b1"><a href="menu4.html">html란?</a></li>
+      <li class="b1"><a href="menu5.html">시멘틱테그란?</a></li>
+      
+    </ul>
+    </div>
+
+
+    
+    <section>
+    <div id="content">
+      <a class = "title">HTML DocumentT와 document</a><br>
+      <p><img src=image/html도큐먼트와도큐먼트.jpg width="60%" height="auto"></p>
+      Document에 들어있는 메소드, Document.__<br>
+      DOMTREE: 태그정보를 가지고 객체를 생성한다. 그리고 부모/자식(tree구조로 관리) 관계를 맺는다.<br><br>
+
+      <a class = "title">document.prototype.getElementById()</a><br>
+      <p><img src=image/도큐먼트프로토타입.jpg width="60%" height="auto"></p>
+      사진내용에서 document는 DOM TREE를 의미한다. <br>
+      생성자로 초기화 시킨 객체를 가르키는 용어는 "인스턴스" 이고,<br>
+      *프로토타입인 getElementById() 가 찾는애를 생성자인 HTMLheadingElement() 에게 리턴한다.<br><br>
+
+      <a class = "title">HTMLHeadingElement()생성과 체인과 객체의관계</a><br>
+      <p><img src=image/체인객체1.jpg width="60%" height="auto"></p>
+      <p><img src=image/HTMLHeadingElement()생성과체인과객체의관계.jpg width="60%" height="auto"></p>
+      HTMLHeadingElement()를 초기화 시켰다는 것은,<br>
+      HTMLHeadingElement() ---> HTMLElement() ---> Element() ---> Node() ---> EventTarget() ---> Object() 를<br>
+      초기화시키고 마지막으로 HTMLHeadingElement()를 추가시키면서 상위의 프로퍼티와 프로토타입들을 물려받는다.<br>
+      즉, e1 이라는 임의의 객체는 상위의 메소드, 프로퍼티와 프로토타입들을 전부 상속받고 호출할 수 있다.<br><br>
+
+      <a class = "title">DOM API와 생성자 상속관계</a><br>
+      <p><img src=image/생성자상속관계.jpg width="60%" height="auto"></p>
+      console.log(e1.localName); // 태그명<br>
+      console.log(e1.constructor.name); // 객체의 생성자 이름<br>
+      자바스크립트는 태그를 다루는 도구를 제공한다. 그 도구를 "DOM(Document Object Model) API"라 부른다.<br>
+      결국e1객체는 <br><br>
+      instanceof HTMLHeadingElement)<br>
+      instanceof HTMLElement); <br>
+      instanceof Element);<br>
+      instanceof Node); <br>
+      instanceof EventTarget);<br>
+      instanceof Object); <br><br>
+      모두의 instanceof 다.<br><br>
+
+      <a class = "title">HTMLCollection</a><br>
+      <p><img src=image/HTMLCollection2.jpg width="60%" height="auto"></p>
+      <p><img src=image/HTMLCollection.jpg width="60%" height="auto"></p>
+      HTMLCollection은 테그들을 모아놓은 것이다.<br>
+      HTMLCollection 객체는 배열은 아니지만,<br>
+      배열처럼 length 프로퍼티가 있고,<br>
+      인덱스 번호를 이용하여 찾은 태그들을 꺼낼 수 있다.<br>
+      => 그래서 반복문을 사용할 수 있다.<br><br>
+
+      <a class = "title">querySelector</a><br>
+      <p><img src=image/쿼리셀렉터.jpg width="60%" height="auto"></p>
+      querySelector는 Element()의 프로토타입이다.<br>
+      querySelector는 "CSS selector 문법"을 쓴다.<br>
+      =>getElementsByClassName/id/class 이런거 보다 querySelector("") 를 추천한다. 왜냐하면 CSS selector 문법을 사용해서이다.<br><br>
+      1) 아이디로 찾기<br>
+      2) 태그 이름으로 찾기<br>
+      3) 분류명으로 찾기<br>
+      4) CSS selector 문법을 사용하기 때문에 복잡한 조건을 기술할 수 있다.<br>
+      => 조건에 해당하는 태그가 여러 개일지라도 그 중 첫 번째 것만 리턴한다.<br>
+      => .g2.g3는 g2와 g3지만, .g2 .g3는 g2속의 g3이다<br>
+      5) 조건에 해당하는 태그를 찾지 못했다면?<br>
+      => 리턴 값은 null이다.<br><br>
+
+      <a class = "title">querySelectorAll</a><br>
+      <p><img src=image/쿼리셀렉터올1.jpg width="60%" height="auto"></p>
+      <p><img src=image/쿼리셀렉터올2.jpg width="60%" height="auto"></p>
+
+      querySelectorAll는 "CSS selector 문법"을 쓴다.<br>
+      => NodeList 객체 리턴<br>
+      NodeList는 배열이 아니다. 따라서 다음 반복문을 사용하면 필요없는 프로퍼티까지 반복하게 된다.<br>
+      NodeList가 배열이 아니지만, 배열처럼 length 라는 변수가 있고,<br>
+      인덱스를 통해 항목을 꺼낼 수 있다. 따라서 다음과 같이 반복문을 사용할 수 있다.<br><br>
+      1) 아이디로 찾기<br>
+      2) 태그 이름으로 찾기<br>
+      3) 분류명으로 찾기<br>
+      4) CSS selector 문법을 사용하기 때문에 복잡한 조건을 기술할 수 있다.<br>
+      5) 조건에 해당하는 태그를 찾을 수 없다면?<br>
+      => 빈 NodeList 객체이다.<br><br>
+
+      <a class = "title">querySelectorAll과 getElementsByTagName 사용시 비교</a><br>
+      <p><img src=image/프로토타입비교1.jpg width="60%" height="auto"></p>
+      <p><img src=image/프로토타입비교2.jpg width="60%" height="auto"></p>
+      getElementsByTagName는 *HTMLCollection로 리턴하는데, 리스트 삭제등 변경시 실시간 반영이 되어서 리스트 유지가 굳이 필요없으면 사용하면 된다.<br>
+      querySelectorAll는 *NodeList로 값을 리턴하는데, 변경사항이 있어도 리스트를 유지하고 싶으면 사용하면된다.<br><br>
+
+      해석하기<br>
+      ("article:first-child > p");//부모의 첫번째 자식인 아티클을 찾는다.그리고 직계 자식인 p태그를 찾는다.<br>
+      ("article:nth-child(2) > p");//부모의 두번째 자식인 아티클을 찾는다.그리고 직계 자식인 p태그를 찾는다.<br>
+      ("article:last-child > p");//부모의 두번째 마지막인 아티클을 찾는다.그리고 직계 자식인 p태그를 찾는다.<br>
+      e.parentElement.removeChild(e);// e를 삭제하고 싶으면 부모엘리먼트로 가서 리무브 차일드로 e를 삭제해줘라.<br><br>
+
+      <a class = "title">.innerHTML, .textContent, .innerText사용시 비교</a><br>
+      <p><img src=image/프로퍼티비교1.jpg width="60%" height="auto"></p>
+      <p><img src=image/프로퍼티비교2.jpg width="60%" height="auto"></p>
+
+      Element.innerHTML : DOMString<br>
+      => Element() 생성자가 추가한 프로퍼티이다.<br>
+      => 태그의 콘텐트를 HTML *코드* 그대로 리턴한다.<br><br>
+      Node.textContent<br>
+      => Node() 생성자가 추가한 프로퍼티이다.<br>
+      => 태그의 콘텐트에서 HTML 코드를 제거한 후 *텍스트*만 리턴한다.<br><br>
+      HTMLElement.innerText<br>
+      => HTMLElement() 생성자가 추가한 프로퍼티이다.<br>
+      => 태그의 콘텐트에서 HTML 코드를 제거한 후 *텍스트*만 리턴한다.<br><br>
+
+      <a class = "title">.setAttribute사용</a><br>
+      <p><img src=image/setAttribute.jpg width="60%" height="auto"></p>
+      => 원래 태그에 있던 속성 값을 바꿀 때<br>
+      태그객체.setAttribute("속성명", "값")<br>
+      => 이 메서드를 사용하면 개발자가 임의로 추가한 프로퍼티 값도 바꿀 수 있다.<br>
+      즉 원래 태그 객체에 없던 프로퍼티 값도 설정할 수 있다.<br>
+      e.setAttribute("href", "http://www.google.com");<br><br>
+
+      <a class = "title">그외 속성추가하는법</a><br>
+      <p><img src=image/속성추가하는법.jpg width="60%" height="auto"></p>
+      디버깅을 쉽게 하려면 다음 방식을 사용하라!<br>
+      setAttribute()로 추가한 속성은 꺼낼 수 없다.<br><br>
+
+      <a class = "title">태그 추가하기</a><br>
+      <p><img src=image/태그추가하기.jpg width="60%" height="auto"></p>
+
+      1) 태그 만들기<br>
+      => Document.prototype.createElement("태그명")를 사용하여 태그 객체를 만든다.<br>
+      2) 태그에 자식 노드를 붙이기<br>
+      => appendChild(자식노드)를 사용하여 자식 태그나 노드를 붙인다.<br>
+        appendChild()는 자식노드(태그)를 맨 뒤에 붙인다.<br><br>
+
+      h1.innerHTML = "제목입니다."(텍스트객체를 붙힐때는 가능하다.)<br>
+      appendChild(text); 노드객체를 붙힐때는 appendchild를 넣어야 한다.<br>
+      p.appendChild(text2); //h1.innerHTML 로 텍스트만 붙히면 사용가능하지만,<br>
+      노드에 붙힐땐 appendchild를 써야 한다.<br><br>
+      
+      => 부모 태그를 알아낸다.<br>
+      => Node.parentElement 또는 Node.parentNode를 사용한다.<br>
+
+      <a class = "title">태그 삭제하기</a><br>
+      <p><img src=image/태그삭제.jpg width="60%" height="auto"></p>
+      부모 태그를 알고 있다면 removeChild()를 이용하여 삭제한다.<br>
+      => 삭제할 태그를 찾는다.<br>
+      => 부모 태그를 찾는다.<br>
+      => 부모 태그에서 자식 태그를 제거한다.<br><br>
+
+      <a class = "title">태그 삭제하기2</a><br>
+      <p><img src=image/태그삭제2.jpg width="60%" height="auto"></p>
+      방법2) <br>
+      *부모 태그를 모른다면* 찾은 태그에서 부모 태그를 알아낸다.<br>
+      => 삭제할 태그를 찾는다.<br>
+      => 부모 태그를 알아낸다.<br>
+      => Node.parentElement 또는 Node.parentNode를 사용한다.<br>
+      ex)var parent = e.parentElement;<br>
+      => 부모 태그에서 자식 태그를 제거한다.<br><br>
+
+      <a class = "title">번외-이미지 회전</a><br>
+      <p><img src=image/이미지회전.jpg width="60%" height="auto"></p>
+      
+
+
+    </div>
+    </section>
+
+ 
+  </body>
